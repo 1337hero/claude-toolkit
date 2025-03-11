@@ -1,0 +1,30 @@
+# Secrets
+.env
+*.env.*
+
+# Personal / machine-specific
+MEMORY.md
+settings.json
+*.local.json
+now.md
+
+# Session data
+memories/
+projects/
+todos/
+
+# Ephemeral state
+logs/
+status_lines/
+
+# OS
+.DS_Store
+*.swp
+*~
+
+# Build artifacts
+**/node_modules/
+**/.cache/
+**/__pycache__/
+*.log
+*.temp-execution-*
