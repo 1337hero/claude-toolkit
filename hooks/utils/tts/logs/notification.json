@@ -1,0 +1,10 @@
+[
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "hook_event_name": "Notification",
+    "message": "Claude is waiting for your input",
+    "notification_type": "idle_prompt"
+  }
+]

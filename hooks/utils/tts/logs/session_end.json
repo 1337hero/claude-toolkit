@@ -1,0 +1,18 @@
+[
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "hook_event_name": "SessionEnd",
+    "reason": "prompt_input_exit",
+    "logged_at": "2026-02-03T12:57:25.546193"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "hook_event_name": "SessionEnd",
+    "reason": "prompt_input_exit",
+    "logged_at": "2026-02-03T13:16:59.273882"
+  }
+]

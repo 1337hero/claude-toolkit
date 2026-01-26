@@ -1,0 +1,380 @@
+[
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "**/*",
+      "path": "/home/mikekey/Claude/hooks/utils/tts"
+    },
+    "tool_use_id": "toolu_01FQGNBu8qsY2HbWqXmv5ead"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/utils/tts/elevenlabs_tts.py"
+    },
+    "tool_use_id": "toolu_01KM4q3zHec4AdBZXWgZktyQ"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/utils/tts/tts_queue.py"
+    },
+    "tool_use_id": "toolu_01VpQu9B6omMg3PS48TyjD2r"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/settings.json"
+    },
+    "tool_use_id": "toolu_01A9b3bwZ3T46RwuqYj2Y8Ma"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "**/*.py",
+      "path": "/home/mikekey/Claude/hooks"
+    },
+    "tool_use_id": "toolu_01E6BaG1Xm5UjybUrebuLxFo"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/stop.py"
+    },
+    "tool_use_id": "toolu_01STvWYg3EVwCFbiMcspyEXQ"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/utils/tts/logs/pre_tool_use.json"
+    },
+    "tool_use_id": "toolu_01SmeYQTsDeGacjWRJKmnNAS"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "**/logs/stop.json",
+      "path": "/home/mikekey/Claude/hooks"
+    },
+    "tool_use_id": "toolu_011Brkbn7oMGWyVsHkDxxc3w"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/utils/tts/logs/stop.json"
+    },
+    "tool_use_id": "toolu_01NwzNEoHDcKqoandsBEdXBQ"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/stop.py",
+      "old_string": "#!/usr/bin/env -S uv run --script\n# /// script\n# requires-python = \">=3.11\"\n# dependencies = [\n#     \"python-dotenv\",\n# ]\n# ///\n\nimport argparse\nimport json\nimport os\nimport sys\nimport random\nimport subprocess\nfrom pathlib import Path\nfrom datetime import datetime\n\ntry:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional\n\n\ndef get_completion_messages():\n    \"\"\"Return list of friendly completion messages.\"\"\"\n    return [\n        \"Work complete!\",\n        \"All done!\",\n        \"Task finished!\",\n        \"Job complete!\",\n        \"Ready for next task!\"\n    ]\n\n\ndef get_tts_script_path():",
+      "new_string": "#!/usr/bin/env -S uv run --script\n# /// script\n# requires-python = \">=3.11\"\n# dependencies = [\n#     \"python-dotenv\",\n# ]\n# ///\n\nimport argparse\nimport json\nimport os\nimport sys\nimport random\nimport subprocess\nfrom pathlib import Path\nfrom datetime import datetime\n\ntry:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional\n\n\ndef get_completion_messages():\n    \"\"\"Return list of friendly completion messages.\"\"\"\n    return [\n        \"Work complete!\",\n        \"All done!\",\n        \"Task finished!\",\n        \"Job complete!\",\n        \"Ready for next task!\"\n    ]\n\n\ndef extract_last_assistant_response(transcript_path: str) -> str | None:\n    \"\"\"Extract the last assistant text response from transcript JSONL.\"\"\"\n    if not transcript_path or not os.path.exists(transcript_path):\n        return None\n\n    last_response = None\n    try:\n        with open(transcript_path, 'r') as f:\n            for line in f:\n                line = line.strip()\n                if not line:\n                    continue\n                try:\n                    entry = json.loads(line)\n                    if entry.get('type') == 'assistant':\n                        message = entry.get('message', {})\n                        content = message.get('content', [])\n                        # Extract text blocks only (skip tool_use blocks)\n                        text_parts = []\n                        for block in content:\n                            if block.get('type') == 'text':\n                                text_parts.append(block.get('text', ''))\n                        if text_parts:\n                            last_response = '\\n'.join(text_parts)\n                except json.JSONDecodeError:\n                    continue\n    except Exception:\n        return None\n\n    return last_response\n\n\ndef get_tts_script_path():",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01SgzesQAX5aW98V3cJpNn8N"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/stop.py",
+      "old_string": "def announce_completion():\n    \"\"\"Announce completion using the best available TTS service.\"\"\"\n    try:\n        tts_script = get_tts_script_path()\n        if not tts_script:\n            return  # No TTS scripts available\n        \n        # Get completion message (LLM-generated or fallback)\n        completion_message = get_llm_completion_message()\n        \n        # Call the TTS script with the completion message\n        subprocess.run([\n            \"uv\", \"run\", tts_script, completion_message\n        ], \n        capture_output=True,  # Suppress output\n        timeout=10  # 10-second timeout\n        )\n        \n    except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):\n        # Fail silently if TTS encounters issues\n        pass\n    except Exception:\n        # Fail silently for any other errors\n        pass",
+      "new_string": "def announce_completion(text: str | None = None):\n    \"\"\"Announce completion using the best available TTS service.\"\"\"\n    try:\n        tts_script = get_tts_script_path()\n        if not tts_script:\n            return  # No TTS scripts available\n\n        # Use provided text or fall back to LLM-generated message\n        message = text if text else get_llm_completion_message()\n\n        # Call the TTS script with the message\n        subprocess.run([\n            \"uv\", \"run\", tts_script, message\n        ],\n        capture_output=True,  # Suppress output\n        timeout=60  # Longer timeout for full responses\n        )\n\n    except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):\n        # Fail silently if TTS encounters issues\n        pass\n    except Exception:\n        # Fail silently for any other errors\n        pass",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01DSUyi1rJDQyurJrnPM3KsL"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/stop.py",
+      "old_string": "def main():\n    try:\n        # Parse command line arguments\n        parser = argparse.ArgumentParser()\n        parser.add_argument('--chat', action='store_true', help='Copy transcript to chat.json')\n        parser.add_argument('--notify', action='store_true', help='Enable TTS completion announcement')\n        args = parser.parse_args()",
+      "new_string": "def main():\n    try:\n        # Parse command line arguments\n        parser = argparse.ArgumentParser()\n        parser.add_argument('--chat', action='store_true', help='Copy transcript to chat.json')\n        parser.add_argument('--notify', action='store_true', help='Enable TTS completion announcement')\n        parser.add_argument('--tts-response', action='store_true', help='Read last assistant response via TTS')\n        args = parser.parse_args()",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_018nzkRTh6g1f451y3p1cZQb"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/stop.py",
+      "old_string": "        # Announce completion via TTS (only if --notify flag is set)\n        if args.notify:\n            announce_completion()",
+      "new_string": "        # TTS: read actual response or announce completion\n        if args.tts_response:\n            transcript_path = input_data.get('transcript_path')\n            response_text = extract_last_assistant_response(transcript_path)\n            if response_text:\n                announce_completion(response_text)\n        elif args.notify:\n            announce_completion()",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01Jc7pj9YNNNnyyJgAzXswDk"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/settings.json",
+      "old_string": "    \"Stop\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"uv run $HOME/Claude/hooks/stop.py --notify\"\n          }\n        ]\n      }\n    ],",
+      "new_string": "    \"Stop\": [\n      {\n        \"matcher\": \"\",\n        \"hooks\": [\n          {\n            \"type\": \"command\",\n            \"command\": \"uv run $HOME/Claude/hooks/stop.py --tts-response\"\n          }\n        ]\n      }\n    ],",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_013vjDqGRrMRrNvQvxcw4bUK"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "tail -5 ~/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/*.jsonl 2>/dev/null | head -50",
+      "description": "Check transcript file timing"
+    },
+    "tool_use_id": "toolu_01PF6e19nELs94hnCeixSdLv"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/todos/todo.md"
+    },
+    "tool_use_id": "toolu_01CzimfS1MgdvcqApUniaoF5"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/MEMORY.md"
+    },
+    "tool_use_id": "toolu_01EGdR3R6B6SGMFvy8r1G9LY"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "**/*",
+      "path": "/home/mikekey/Claude/hooks/utils/tts"
+    },
+    "tool_use_id": "toolu_01GixyaVyYjhdAx2BbZeubPE"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "*.py",
+      "path": "/home/mikekey/Claude/hooks"
+    },
+    "tool_use_id": "toolu_01NFD3CmooU3bzKAQgcz5Y4E"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/stop.py"
+    },
+    "tool_use_id": "toolu_01VU89x9FwmCb1fk3B996H8W"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/utils/tts/tts_queue.py"
+    },
+    "tool_use_id": "toolu_01QqASTrubUpmq3aP8E497Pq"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/utils/tts/logs/stop.json"
+    },
+    "tool_use_id": "toolu_016Jhz1vXJf1aPNumxyxiV3T"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "tail -20 /home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl 2>/dev/null | head -5",
+      "description": "Check recent transcript entries"
+    },
+    "tool_use_id": "toolu_018QM9dgeje49S29GpfchDNf"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "grep '\"type\":\"assistant\"' /home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl | tail -3 | python3 -c \"import sys, json; [print(json.dumps(json.loads(l), indent=2)[:500]) for l in sys.stdin]\"",
+      "description": "Examine assistant entries in transcript"
+    },
+    "tool_use_id": "toolu_01NaDShH7ebDBPFRLM4c4B51"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "tail -10 /home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl | python3 -c \"import sys, json; [print(json.loads(l).get('type', 'unknown')) for l in sys.stdin]\"",
+      "description": "Check the types of last 10 transcript entries"
+    },
+    "tool_use_id": "toolu_015fiWLEoBCAQf2EZCxpeQsF"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "tail -1 /home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl | python3 -c \"import sys, json; d=json.loads(sys.stdin.read()); print([c.get('type') for c in d.get('message',{}).get('content',[])])\"",
+      "description": "Check content types of last assistant message"
+    },
+    "tool_use_id": "toolu_01T9QpwQTMKuiJSMXGx9rJyx"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "grep '\"type\":\"assistant\"' /home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl | python3 -c \"\nimport sys, json\nfor line in sys.stdin:\n    d = json.loads(line)\n    content = d.get('message', {}).get('content', [])\n    types = [c.get('type') for c in content]\n    texts = [c.get('text', '')[:50] for c in content if c.get('type') == 'text']\n    if texts:\n        print(f'Types: {types}')\n        print(f'Text preview: {texts[0]}...')\n        print('---')\n\" | tail -30",
+      "description": "Find assistant messages with text content"
+    },
+    "tool_use_id": "toolu_01APj16gvrbKE5VkH8g2uZQc"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cat /home/mikekey/Claude/hooks/utils/tts/logs/stop.json | python3 -c \"import sys, json; d=json.load(sys.stdin); print(json.dumps(list(d[-1].keys()), indent=2))\"",
+      "description": "Check what fields are in stop hook input"
+    },
+    "tool_use_id": "toolu_01GKHaojqiX1V6B7WWZ7MJkg"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/home/mikekey/Claude/hooks/stop.py",
+      "old_string": "def extract_last_assistant_response(transcript_path: str) -> str | None:\n    \"\"\"Extract the last assistant text response from transcript JSONL.\"\"\"\n    if not transcript_path or not os.path.exists(transcript_path):\n        return None\n\n    last_response = None\n    try:\n        with open(transcript_path, 'r') as f:\n            for line in f:\n                line = line.strip()\n                if not line:\n                    continue\n                try:\n                    entry = json.loads(line)\n                    if entry.get('type') == 'assistant':\n                        message = entry.get('message', {})\n                        content = message.get('content', [])\n                        # Extract text blocks only (skip tool_use blocks)\n                        text_parts = []\n                        for block in content:\n                            if block.get('type') == 'text':\n                                text_parts.append(block.get('text', ''))\n                        if text_parts:\n                            last_response = '\\n'.join(text_parts)\n                except json.JSONDecodeError:\n                    continue\n    except Exception:\n        return None\n\n    return last_response",
+      "new_string": "def extract_last_assistant_response(transcript_path: str, timeout: float = 2.0, poll_interval: float = 0.1) -> str | None:\n    \"\"\"\n    Extract the last assistant text response from transcript JSONL.\n\n    Polls the transcript file to handle timing issues where the final\n    response may not be written yet when the stop hook fires.\n    \"\"\"\n    import time\n\n    if not transcript_path or not os.path.exists(transcript_path):\n        return None\n\n    start_time = time.time()\n    last_response = None\n    last_file_size = 0\n\n    while True:\n        try:\n            current_size = os.path.getsize(transcript_path)\n\n            # Read from end to find most recent assistant text\n            assistant_entries = []\n            with open(transcript_path, 'r') as f:\n                for line in f:\n                    line = line.strip()\n                    if not line:\n                        continue\n                    try:\n                        entry = json.loads(line)\n                        if entry.get('type') == 'assistant':\n                            assistant_entries.append(entry)\n                    except json.JSONDecodeError:\n                        continue\n\n            # Check most recent assistant entries (from end)\n            for entry in reversed(assistant_entries):\n                message = entry.get('message', {})\n                content = message.get('content', [])\n                text_parts = []\n                for block in content:\n                    if block.get('type') == 'text':\n                        text_parts.append(block.get('text', ''))\n                if text_parts:\n                    last_response = '\\n'.join(text_parts)\n                    break\n\n            # If we found text content in the most recent entry, return it\n            if last_response and assistant_entries:\n                most_recent = assistant_entries[-1]\n                most_recent_content = most_recent.get('message', {}).get('content', [])\n                has_text = any(b.get('type') == 'text' for b in most_recent_content)\n                if has_text:\n                    return last_response\n\n            # Check if we should keep polling\n            elapsed = time.time() - start_time\n            if elapsed >= timeout:\n                break\n\n            # If file is still growing, keep waiting\n            if current_size > last_file_size:\n                last_file_size = current_size\n                time.sleep(poll_interval)\n                continue\n\n            # File stopped growing but no text in latest - wait a bit more\n            time.sleep(poll_interval)\n\n        except Exception:\n            break\n\n    return last_response",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_016p7WiSqBtn2WKU6AUcQgHi"
+  }
+]

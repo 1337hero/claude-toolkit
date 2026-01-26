@@ -1,0 +1,74 @@
+[
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  }
+]

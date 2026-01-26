@@ -1,0 +1,74 @@
+[
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "I want to get it setup, so responses are read with the elvenlabs_tts.py"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "read every response that is a response, like the one you just gave asking a question "
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "thanks"
+  },
+  {
+    "session_id": "5aae2906-806d-4dd4-955e-91f88e3b481a",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/5aae2906-806d-4dd4-955e-91f88e3b481a.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "No it said \"mike we're ready for your next idea?\" was that a canned response"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "REady to get started today"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "Thank you - we were working on the tts hook system. I needed to restart the session and get you to provide a response to verify it works. It's working!"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "Well, it fired and this time, it re-read the previous message, and not the most recent, so maybe it needs some more work."
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "Read from the end of the transcript with retry/poll"
+  },
+  {
+    "session_id": "aae84316-289e-4170-87e2-25b6984050f2",
+    "transcript_path": "/home/mikekey/.claude/projects/-home-mikekey-Claude-hooks-utils-tts/aae84316-289e-4170-87e2-25b6984050f2.jsonl",
+    "cwd": "/home/mikekey/Claude/hooks/utils/tts",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "It just read it correctly! "
+  }
+]
