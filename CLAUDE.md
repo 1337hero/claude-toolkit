@@ -31,6 +31,7 @@ When something feels overcomplicated, it probably is. Ask: what can we remove? S
 ## Critical Thinking
 
 - Fix root cause (not band-aid).
+- After correction: log pattern in lessons.md so it doesn't repeat.
 - Unsure: read more code; if still stuck, ask w/ short options.
 - Conflicts: call out; pick safer path.
 - Unrecognized changes: assume other agent; keep going; focus your changes. If it causes issues, stop + ask user.
@@ -45,6 +46,7 @@ When something feels overcomplicated, it probably is. Ask: what can we remove? S
 ├── projects/      # Living docs — current state of active work
 ├── memories/      # Session logs — what happened, decisions made
 ├── todos/         # Active tasks and reminders
+├── lessons.md     # Anti-patterns and corrections — Claude's self-improvement log
 └── scripts/       # Automation
 
 ~/1337hero/        # Business — brand, clients, ops
@@ -63,12 +65,14 @@ When something feels overcomplicated, it probably is. Ask: what can we remove? S
 **Starting a session:**
 1. Check ~/Claude/MEMORY.md for persistent context
 2. Check ~/Claude/todos/todo.md for active tasks
-3. If continuing a project, read relevant projects/*.md and memories/*
+3. Check ~/Claude/lessons.md for past corrections and anti-patterns
+4. If continuing a project, read relevant projects/*.md and memories/*
 
 **During work:**
 - Create or update project file in projects/ with descriptive title
 - Append key decisions, gotchas, state changes as work progresses
 - For significant sessions, use /remember to save a memory
+- After any user correction, update lessons.md with the pattern and how to avoid it
 
 **Project files contain:**
 - Current state / where we are
