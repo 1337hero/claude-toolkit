@@ -9,10 +9,13 @@ settings.json
 now.md
 lessons.md
 
-# Session data
-memories/
-projects/
-todos/
+# Session data (keep dirs tracked, ignore contents)
+memories/*
+!memories/.gitkeep
+projects/*
+!projects/.gitkeep
+todos/*
+!todos/.gitkeep
 
 # Ephemeral state
 logs/

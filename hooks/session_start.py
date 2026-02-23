@@ -115,9 +115,6 @@ def load_development_context(source):
     
     # Load project-specific context files if they exist
     context_files = [
-        ".claude/CONTEXT.md",
-        ".claude/TODO.md",
-        "TODO.md",
         ".github/ISSUE_TEMPLATE.md"
     ]
     

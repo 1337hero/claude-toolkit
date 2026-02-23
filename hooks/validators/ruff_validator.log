@@ -5735,3 +5735,308 @@
 2026-02-21 20:53:23 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
 2026-02-21 20:53:23 | INFO | file_path: /home/mikekey/Vera/cortex/config.yaml
 2026-02-21 20:53:23 | INFO | Skipping non-Python file
+2026-02-22 12:04:13 | INFO | ==================================================
+2026-02-22 12:04:13 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 12:04:13 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 12:04:13 | INFO | file_path: /home/mikekey/Claude/lessons.md
+2026-02-22 12:04:13 | INFO | Skipping non-Python file
+2026-02-22 12:04:14 | INFO | ==================================================
+2026-02-22 12:04:14 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 12:04:14 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 12:04:14 | INFO | file_path: /home/mikekey/Claude/.gitignore
+2026-02-22 12:04:14 | INFO | Skipping non-Python file
+2026-02-22 12:04:15 | INFO | ==================================================
+2026-02-22 12:04:15 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 12:04:15 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 12:04:15 | INFO | file_path: /home/mikekey/Claude/CLAUDE.md
+2026-02-22 12:04:15 | INFO | Skipping non-Python file
+2026-02-22 12:04:19 | INFO | ==================================================
+2026-02-22 12:04:19 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 12:04:19 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 12:04:19 | INFO | file_path: /home/mikekey/Claude/CLAUDE.md
+2026-02-22 12:04:19 | INFO | Skipping non-Python file
+2026-02-22 12:04:20 | INFO | ==================================================
+2026-02-22 12:04:20 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 12:04:20 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 12:04:20 | INFO | file_path: /home/mikekey/Claude/CLAUDE.md
+2026-02-22 12:04:20 | INFO | Skipping non-Python file
+2026-02-22 12:04:22 | INFO | ==================================================
+2026-02-22 12:04:22 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 12:04:22 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 12:04:22 | INFO | file_path: /home/mikekey/Claude/CLAUDE.md
+2026-02-22 12:04:22 | INFO | Skipping non-Python file
+2026-02-22 12:04:27 | INFO | ==================================================
+2026-02-22 12:04:27 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 12:04:27 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 12:04:27 | INFO | file_path: /home/mikekey/Claude/skills/bird/SKILL.md
+2026-02-22 12:04:27 | INFO | Skipping non-Python file
+2026-02-22 13:01:43 | INFO | ==================================================
+2026-02-22 13:01:43 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 13:01:43 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 13:01:43 | INFO | file_path: /home/mikekey/Builds/Knitly/landing/src/pages/index.astro
+2026-02-22 13:01:43 | INFO | Skipping non-Python file
+2026-02-22 13:02:39 | INFO | ==================================================
+2026-02-22 13:02:39 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 13:02:39 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 13:02:39 | INFO | file_path: /home/mikekey/Builds/Knitly/landing/src/pages/index.astro
+2026-02-22 13:02:39 | INFO | Skipping non-Python file
+2026-02-22 13:03:10 | INFO | ==================================================
+2026-02-22 13:03:10 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 13:03:10 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 13:03:10 | INFO | file_path: /home/mikekey/Builds/Knitly/landing/src/pages/index.astro
+2026-02-22 13:03:10 | INFO | Skipping non-Python file
+2026-02-22 13:03:38 | INFO | ==================================================
+2026-02-22 13:03:38 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 13:03:38 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 13:03:38 | INFO | file_path: /home/mikekey/Builds/Knitly/landing/src/pages/index.astro
+2026-02-22 13:03:38 | INFO | Skipping non-Python file
+2026-02-22 13:04:13 | INFO | ==================================================
+2026-02-22 13:04:13 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 13:04:13 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 13:04:13 | INFO | file_path: /home/mikekey/Builds/Knitly/landing/src/pages/index.astro
+2026-02-22 13:04:13 | INFO | Skipping non-Python file
+2026-02-22 13:04:25 | INFO | ==================================================
+2026-02-22 13:04:25 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 13:04:25 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 13:04:25 | INFO | file_path: /home/mikekey/Builds/Knitly/landing/src/pages/index.astro
+2026-02-22 13:04:25 | INFO | Skipping non-Python file
+2026-02-22 13:43:56 | INFO | ==================================================
+2026-02-22 13:43:56 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 13:43:56 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 13:43:56 | INFO | file_path: /home/mikekey/Builds/Knitly/landing/research/knitly-market-research.md
+2026-02-22 13:43:56 | INFO | Skipping non-Python file
+2026-02-22 17:50:25 | INFO | ==================================================
+2026-02-22 17:50:25 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:50:25 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:50:25 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/config.rs
+2026-02-22 17:50:25 | INFO | Skipping non-Python file
+2026-02-22 17:50:26 | INFO | ==================================================
+2026-02-22 17:50:26 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:50:26 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:50:26 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/config.rs
+2026-02-22 17:50:26 | INFO | Skipping non-Python file
+2026-02-22 17:50:27 | INFO | ==================================================
+2026-02-22 17:50:27 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:50:27 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:50:27 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/config.rs
+2026-02-22 17:50:27 | INFO | Skipping non-Python file
+2026-02-22 17:50:29 | INFO | ==================================================
+2026-02-22 17:50:29 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:50:29 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:50:29 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/config.rs
+2026-02-22 17:50:29 | INFO | Skipping non-Python file
+2026-02-22 17:50:30 | INFO | ==================================================
+2026-02-22 17:50:30 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:50:30 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:50:30 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/config.rs
+2026-02-22 17:50:30 | INFO | Skipping non-Python file
+2026-02-22 17:50:34 | INFO | ==================================================
+2026-02-22 17:50:34 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:50:34 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:50:34 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/defaults/config.toml
+2026-02-22 17:50:34 | INFO | Skipping non-Python file
+2026-02-22 17:50:36 | INFO | ==================================================
+2026-02-22 17:50:36 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:50:36 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:50:36 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/defaults/config.toml
+2026-02-22 17:50:36 | INFO | Skipping non-Python file
+2026-02-22 17:50:47 | INFO | ==================================================
+2026-02-22 17:50:47 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:50:47 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:50:47 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/config.rs
+2026-02-22 17:50:47 | INFO | Skipping non-Python file
+2026-02-22 17:51:02 | INFO | ==================================================
+2026-02-22 17:51:02 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:51:02 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:51:02 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:51:02 | INFO | Skipping non-Python file
+2026-02-22 17:51:38 | INFO | ==================================================
+2026-02-22 17:51:38 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:51:38 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:51:38 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:51:38 | INFO | Skipping non-Python file
+2026-02-22 17:52:06 | INFO | ==================================================
+2026-02-22 17:52:06 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:52:06 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:52:06 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/history.rs
+2026-02-22 17:52:06 | INFO | Skipping non-Python file
+2026-02-22 17:52:09 | INFO | ==================================================
+2026-02-22 17:52:09 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:52:09 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:52:09 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/main.rs
+2026-02-22 17:52:09 | INFO | Skipping non-Python file
+2026-02-22 17:53:18 | INFO | ==================================================
+2026-02-22 17:53:18 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:53:18 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:53:18 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/desktop.rs
+2026-02-22 17:53:18 | INFO | Skipping non-Python file
+2026-02-22 17:53:22 | INFO | ==================================================
+2026-02-22 17:53:22 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:53:22 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:53:22 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:53:22 | INFO | Skipping non-Python file
+2026-02-22 17:53:32 | INFO | ==================================================
+2026-02-22 17:53:32 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:53:32 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:53:32 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:53:32 | INFO | Skipping non-Python file
+2026-02-22 17:53:36 | INFO | ==================================================
+2026-02-22 17:53:36 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:53:36 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:53:36 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:53:36 | INFO | Skipping non-Python file
+2026-02-22 17:53:41 | INFO | ==================================================
+2026-02-22 17:53:41 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:53:41 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:53:41 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:53:41 | INFO | Skipping non-Python file
+2026-02-22 17:53:47 | INFO | ==================================================
+2026-02-22 17:53:47 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:53:47 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:53:47 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:53:47 | INFO | Skipping non-Python file
+2026-02-22 17:53:51 | INFO | ==================================================
+2026-02-22 17:53:51 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:53:51 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:53:51 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:53:51 | INFO | Skipping non-Python file
+2026-02-22 17:53:57 | INFO | ==================================================
+2026-02-22 17:53:57 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 17:53:57 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 17:53:57 | INFO | file_path: /home/mikekey/Builds/Yeet/yeet/src/ui.rs
+2026-02-22 17:53:57 | INFO | Skipping non-Python file
+2026-02-22 22:12:49 | INFO | ==================================================
+2026-02-22 22:12:49 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 22:12:49 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 22:12:49 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/GoalsOverview.jsx
+2026-02-22 22:12:49 | INFO | Skipping non-Python file
+2026-02-22 22:18:13 | INFO | ==================================================
+2026-02-22 22:18:13 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 22:18:13 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 22:18:13 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/CaptureModal.jsx
+2026-02-22 22:18:13 | INFO | Skipping non-Python file
+2026-02-22 22:18:40 | INFO | ==================================================
+2026-02-22 22:18:40 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 22:18:40 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 22:18:40 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/pages/Search.jsx
+2026-02-22 22:18:40 | INFO | Skipping non-Python file
+2026-02-22 22:18:47 | INFO | ==================================================
+2026-02-22 22:18:47 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 22:18:47 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 22:18:47 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/notebooks/GoalCard.jsx
+2026-02-22 22:18:47 | INFO | Skipping non-Python file
+2026-02-22 22:18:51 | INFO | ==================================================
+2026-02-22 22:18:51 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 22:18:51 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 22:18:51 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/pages/Search.jsx
+2026-02-22 22:18:51 | INFO | Skipping non-Python file
+2026-02-22 22:18:59 | INFO | ==================================================
+2026-02-22 22:18:59 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-22 22:18:59 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-22 22:18:59 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/pages/Search.jsx
+2026-02-22 22:18:59 | INFO | Skipping non-Python file
+2026-02-23 00:35:14 | INFO | ==================================================
+2026-02-23 00:35:14 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:14 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:14 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/TaskList.jsx
+2026-02-23 00:35:14 | INFO | Skipping non-Python file
+2026-02-23 00:35:19 | INFO | ==================================================
+2026-02-23 00:35:19 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:19 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:19 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/GoalsOverview.jsx
+2026-02-23 00:35:19 | INFO | Skipping non-Python file
+2026-02-23 00:35:20 | INFO | ==================================================
+2026-02-23 00:35:20 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:20 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:20 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/TaskList.jsx
+2026-02-23 00:35:20 | INFO | Skipping non-Python file
+2026-02-23 00:35:23 | INFO | ==================================================
+2026-02-23 00:35:23 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:23 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:23 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/TaskList.jsx
+2026-02-23 00:35:23 | INFO | Skipping non-Python file
+2026-02-23 00:35:25 | INFO | ==================================================
+2026-02-23 00:35:25 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:25 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:25 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/GoalsOverview.jsx
+2026-02-23 00:35:25 | INFO | Skipping non-Python file
+2026-02-23 00:35:27 | INFO | ==================================================
+2026-02-23 00:35:27 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:27 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:27 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/TaskList.jsx
+2026-02-23 00:35:27 | INFO | Skipping non-Python file
+2026-02-23 00:35:28 | INFO | ==================================================
+2026-02-23 00:35:28 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:28 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:28 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/GoalsOverview.jsx
+2026-02-23 00:35:28 | INFO | Skipping non-Python file
+2026-02-23 00:35:33 | INFO | ==================================================
+2026-02-23 00:35:33 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:33 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:33 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/TaskList.jsx
+2026-02-23 00:35:33 | INFO | Skipping non-Python file
+2026-02-23 00:35:35 | INFO | ==================================================
+2026-02-23 00:35:35 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:35 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:35 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/pages/Notebooks.jsx
+2026-02-23 00:35:35 | INFO | Skipping non-Python file
+2026-02-23 00:35:38 | INFO | ==================================================
+2026-02-23 00:35:38 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:38 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:38 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/TaskList.jsx
+2026-02-23 00:35:38 | INFO | Skipping non-Python file
+2026-02-23 00:35:41 | INFO | ==================================================
+2026-02-23 00:35:41 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:41 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:41 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/pages/Notebook.jsx
+2026-02-23 00:35:41 | INFO | Skipping non-Python file
+2026-02-23 00:35:42 | INFO | ==================================================
+2026-02-23 00:35:42 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:42 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:42 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/TaskList.jsx
+2026-02-23 00:35:42 | INFO | Skipping non-Python file
+2026-02-23 00:35:46 | INFO | ==================================================
+2026-02-23 00:35:46 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:46 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:46 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/dashboard/TaskList.jsx
+2026-02-23 00:35:46 | INFO | Skipping non-Python file
+2026-02-23 00:35:50 | INFO | ==================================================
+2026-02-23 00:35:50 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:35:50 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:35:50 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/pages/Notebook.jsx
+2026-02-23 00:35:50 | INFO | Skipping non-Python file
+2026-02-23 00:36:02 | INFO | ==================================================
+2026-02-23 00:36:02 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:36:02 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:36:02 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/pages/Notebook.jsx
+2026-02-23 00:36:02 | INFO | Skipping non-Python file
+2026-02-23 00:47:49 | INFO | ==================================================
+2026-02-23 00:47:49 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:47:49 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:47:49 | INFO | file_path: /home/mikekey/Builds/scaffold/specs/notes-modal-spec.md
+2026-02-23 00:47:49 | INFO | Skipping non-Python file
+2026-02-23 00:53:17 | INFO | ==================================================
+2026-02-23 00:53:17 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:53:17 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:53:17 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/notebooks/NoteModal.jsx
+2026-02-23 00:53:17 | INFO | Skipping non-Python file
+2026-02-23 00:53:28 | INFO | ==================================================
+2026-02-23 00:53:28 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:53:28 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:53:28 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/notebooks/NoteItem.jsx
+2026-02-23 00:53:28 | INFO | Skipping non-Python file
+2026-02-23 00:53:34 | INFO | ==================================================
+2026-02-23 00:53:34 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:53:34 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:53:34 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/notebooks/InlineCreate.jsx
+2026-02-23 00:53:34 | INFO | Skipping non-Python file
+2026-02-23 00:53:42 | INFO | ==================================================
+2026-02-23 00:53:42 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:53:42 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:53:42 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/notebooks/InlineCreate.jsx
+2026-02-23 00:53:42 | INFO | Skipping non-Python file
+2026-02-23 00:53:49 | INFO | ==================================================
+2026-02-23 00:53:49 | INFO | RUFF VALIDATOR POSTTOOLUSE HOOK TRIGGERED
+2026-02-23 00:53:49 | INFO | hook_input keys: ['session_id', 'transcript_path', 'cwd', 'permission_mode', 'hook_event_name', 'tool_name', 'tool_input', 'tool_response', 'tool_use_id']
+2026-02-23 00:53:49 | INFO | file_path: /home/mikekey/Builds/scaffold/app/src/components/notebooks/InlineCreate.jsx
+2026-02-23 00:53:49 | INFO | Skipping non-Python file
