@@ -2,7 +2,16 @@
 
 My working setup for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Skills, agents, hooks, slash commands, output styles, and the `CLAUDE.md` that ties it all together.
 
-This repo lives  `~/Claude` and it's folders are symlinked into  `~/.claude/` 
+This repo lives at `~/Claude` with its folders symlinked into `~/.claude/`:
+
+```
+~/.claude/CLAUDE.md      → ~/Claude/CLAUDE.md
+~/.claude/agents/        → ~/Claude/agents/
+~/.claude/commands/      → ~/Claude/commands/
+~/.claude/hooks/         → ~/Claude/hooks/
+~/.claude/skills/        → ~/Claude/skills/
+~/.claude/output-styles/ → ~/Claude/output-styles/
+```
 
 Clone it, steal what's useful, make it yours.
 
@@ -17,7 +26,7 @@ Clone it, steal what's useful, make it yours.
 │   ├── sounds/            # Audio cues for agent start/stop and alerts
 │   ├── utils/             # TTS engines, LLM helpers (Anthropic, OpenAI, Ollama)
 │   └── validators/        # Post-tool-use validators (ruff linter, file checks)
-├── skills/                # 30 skills — from frontend design to SEO audits to PDF manipulation
+├── skills/                # 47 skills — from frontend design to SEO audits to API integrations
 ├── output-styles/         # Response format presets (bullet points, zen master, ultra-concise)
 ├── scripts/               # Standalone tools (committer, visual audit)
 └── docs/                  # Design plans and reference material
@@ -44,11 +53,11 @@ These are gitignored because they're personal or ephemeral:
 
 The core of the setup. Defines personality, technical philosophy (DHH-inspired simplicity), git safety rules, workflow patterns, and coding conventions. Read it — even if you don't use anything else, a well-crafted `CLAUDE.md` transforms the experience. **BUT YOU SHOULD CUSTOMIZE THIS** - it's styled for me.
 
-### Skills (30)
+### Skills (47)
 
 Each skill is a self-contained capability Claude can invoke. Some I built, some are community skills I've adapted.
 
-**Development:** `frontend-design`, `frontend-philosophy`, `scaffold-astro`, `mcp-builder`, `web-artifacts-builder`, `systematic-debugging`, `playwright-skill`
+**Development:** `frontend-design`, `frontend-philosophy`, `scaffold-astro`, `mcp-builder`, `web-artifacts-builder`, `systematic-debugging`, `playwright-skill`, `test-driven-development`, `codebase-documenter`
 
 **Design:** `awwwards-design`, `mk3y-design`, `ui-ux-pro-max`, `canvas-design`, `visual-audit`, `visual-explainer`
 
@@ -58,9 +67,17 @@ Each skill is a self-contained capability Claude can invoke. Some I built, some 
 
 **Research:** `mckinsey-research`, `audit-website`
 
+**Code Quality:** `requesting-code-review`, `receiving-code-review`, `insecure-defaults`, `verification-before-completion`, `ask-questions-if-underspecified`
+
+**Workflow:** `brainstorming`, `dispatching-parallel-agents`, `using-git-worktrees`, `finishing-a-development-branch`, `save-money`
+
+**Integrations:** `api-gateway` (90+ third-party APIs — Slack, HubSpot, Stripe, Google Workspace, etc.), `cloudflare`, `email-best-practices`, `bird` (Twitter/X)
+
+**Business:** `bookkeeping-basics`
+
 **Tooling:** `pdf`, `tmux`, `uv`, `commit`, `skill-creator`
 
-### Agents (18)
+### Agents (19)
 
 Subagents for parallel and specialized work:
 
@@ -68,7 +85,7 @@ Subagents for parallel and specialized work:
 - **Team** — builder, validator, Next.js expert, React/TypeScript specialist
 - **Testers** — API frontend (curl-based), API backend (pytest), test writer
 - **Research** — system architect, docs fetcher, PRD writer, YouTube API expert, LLM/AI research
-- **Utilities** — meta-agent (creates new agents), training data generator, work completion summary, Hono stack scaffolder
+- **Utilities** — meta-agent (creates new agents), training data generator, Hono stack scaffolder
 
 ### Hooks
 
@@ -107,17 +124,6 @@ The `CLAUDE.md` alone is worth studying. The patterns - session memory, slash co
 3. Create `todos/`, `memories/`, `projects/` directories for your session data
 4. Add a `.env` if any hooks need API keys (TTS, etc.)
 
-## Plugins I Use (Not Committed)
-
-Plugins are installed via Claude Code's plugin system (`/install-plugin`) and live in `~/.claude/plugins/`. You'll see references to these throughout the skills list — they're not in this repo, but they're part of the workflow.
-
-**[Superpowers](https://github.com/anthropics/claude-plugins-official)** — The big one. Adds structured workflows for brainstorming, plan writing, TDD, parallel agent dispatch, code review, debugging, and git worktree management. If you only install one plugin, make it this.
-
-**[Ralph Loop](https://github.com/anthropics/claude-plugins-official)** — Autonomous loop that lets Claude keep working without waiting for input at each step. Useful for executing multi-step plans.
-
-**[Trail of Bits Security](https://github.com/trailofbits/skills)** — Two plugins:
-- `insecure-defaults` — flags insecure patterns in generated code
-- `ask-questions-if-underspecified` — forces Claude to clarify before guessing
 
 ## Dependencies
 
