@@ -10,7 +10,6 @@ bird needs `auth_token` and `ct0` from Firefox. node:sqlite is broken on this sy
 ```bash
 cp /home/mikekey/.mozilla/firefox/u80t1430.default-release/cookies.sqlite /tmp/ff_cookies.sqlite
 sqlite3 /tmp/ff_cookies.sqlite "SELECT name, value FROM moz_cookies WHERE (host LIKE '%twitter.com%' OR host LIKE '%x.com%') AND name IN ('auth_token', 'ct0');"
-rm /tmp/ff_cookies.sqlite
 ```
 
 Capture both values, then pass to every bird command:
@@ -37,7 +36,6 @@ bird search "query"                # search tweets
 1. Extract cookies (see above)
 2. Store `auth_token` and `ct0` in shell variables
 3. Run bird commands with `--plain --auth-token "$AUTH_TOKEN" --ct0 "$CT0"`
-4. Clean up `/tmp/ff_cookies.sqlite` after extraction
 
 ## Notes
 
