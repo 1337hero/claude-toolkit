@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Table Reference Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1215;
+      --surface: #221a1d;
+      --surface-2: #2d2226;
+      --border: #3d2f34;
+      --text: #e8dde0;
+      --text-muted: #9e868e;
+      --accent: #c46a7a;
+      --accent-dim: rgba(196, 106, 122, 0.15);
+      --accent-2: #8a6a9e;
+      --accent-2-dim: rgba(138, 106, 158, 0.15);
+      --green: #6a9e7a;
+      --green-dim: rgba(106, 158, 122, 0.15);
+      --red: #c45a5a;
+      --red-dim: rgba(196, 90, 90, 0.15);
+      --amber: #c4a03a;
+      --amber-dim: rgba(196, 160, 58, 0.15);
+      --radius: 8px;
+      --font-heading: 'Instrument Serif', serif;
+      --font-body: 'Instrument Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8f2f4;
+      --surface: #ffffff;
+      --surface-2: #f0e8eb;
+      --border: #d9cdd2;
+      --text: #2d2025;
+      --text-muted: #7a6a70;
+      --accent: #9a3a4a;
+      --accent-dim: rgba(154, 58, 74, 0.08);
+      --accent-2: #6a4a7a;
+      --accent-2-dim: rgba(106, 74, 122, 0.08);
+      --green: #3a7a4a;
+      --green-dim: rgba(58, 122, 74, 0.08);
+      --red: #9a2a2a;
+      --red-dim: rgba(154, 42, 42, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    p, li, td, th, code, span { overflow-wrap: break-word; word-break: break-word; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 20% 15%, rgba(196,106,122,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 85%, rgba(138,106,158,0.04) 0%, transparent 50%);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--accent-dim);
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--text); text-decoration-color: var(--accent); }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .theme-toggle:hover { background: var(--surface-2); }
+
+    /* Header */
+    .page-header {
+      padding: 2rem 0 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .page-header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 400;
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+    .page-header .subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 55ch;
+    }
+
+    /* KPI Summary Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .kpi-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .kpi-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+    .kpi-trend { font-size: 0.75rem; margin-top: 0.5rem; }
+    .kpi-trend--up   { color: var(--green); }
+    .kpi-trend--down { color: var(--red); }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .legend-swatch {
+      display: inline-block;
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+      font-size: 0.65rem;
+      font-weight: 600;
+    }
+
+    /* Data Table */
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .table-scroll {
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .data-table thead th {
+      position: sticky;
+      top: 0;
+      background: var(--surface-2);
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+      z-index: 2;
+    }
+    .data-table td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .data-table tbody tr:nth-child(even) td {
+      background: rgba(255,255,255,0.02);
+    }
+    [data-theme="light"] .data-table tbody tr:nth-child(even) td {
+      background: rgba(0,0,0,0.02);
+    }
+    .data-table tbody tr:hover td {
+      background: var(--accent-dim);
+    }
+    .data-table .num {
+      text-align: right;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+    .data-table tfoot td {
+      border-top: 2px solid var(--border);
+      border-bottom: none;
+      font-weight: 600;
+      background: var(--surface-2);
+      font-size: 0.8rem;
+    }
+
+    /* Status badges */
+    .status {
+      display: inline-block;
+      padding: 0.15em 0.5em;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .status--ok     { background: var(--green-dim); color: var(--green); }
+    .status--warn   { background: var(--amber-dim); color: var(--amber); }
+    .status--error  { background: var(--red-dim);   color: var(--red); }
+    .status--info   { background: var(--accent-dim); color: var(--accent); }
+    .status--new    { background: var(--accent-2-dim); color: var(--accent-2); }
+
+    /* Component name styling */
+    .component-name {
+      font-weight: 600;
+    }
+    .component-path {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 0.15rem;
+    }
+
+    /* Collapsible details */
+    .collapsible {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 0.5rem 0;
+    }
+    .collapsible summary {
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+    .collapsible summary::-webkit-details-marker { display: none; }
+    .collapsible summary::before {
+      content: ">";
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+    .collapsible[open] summary::before { transform: rotate(90deg); }
+    .collapsible-body {
+      padding: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Section label */
+    .ve-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .ve-label::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 2rem 0 0.75rem;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeUp 0.4s ease-out forwards;
+      animation-delay: calc(var(--i, 0) * 0.06s);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { animation-duration: 0.01ms; }
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1rem; }
+      .page-header h1 { font-size: 1.75rem; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+    <span class="theme-icon">*</span>
+  </button>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="page-header fade-in" style="--i: 0">
+      <h1>Component Health Audit</h1>
+      <p class="subtitle">Weekly audit of frontend component library — coverage, bundle impact, and maintenance status across 24 components.</p>
+    </div>
+
+    <!-- KPI Summary Cards -->
+    <div class="kpi-grid fade-in" style="--i: 1">
+      <div class="kpi-card">
+        <div class="kpi-number">24</div>
+        <div class="kpi-label">Total Components</div>
+        <div class="kpi-trend kpi-trend--up">+3 this week</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number">87%</div>
+        <div class="kpi-label">Test Coverage</div>
+        <div class="kpi-trend kpi-trend--up">+4% from last week</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number">142kb</div>
+        <div class="kpi-label">Total Bundle</div>
+        <div class="kpi-trend kpi-trend--down">+8kb from last week</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number">3</div>
+        <div class="kpi-label">Need Attention</div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend fade-in" style="--i: 2">
+      <div class="legend-item"><span class="legend-swatch status--ok">Active</span> Healthy, maintained</div>
+      <div class="legend-item"><span class="legend-swatch status--warn">Review</span> Needs attention</div>
+      <div class="legend-item"><span class="legend-swatch status--error">Stale</span> No updates 60+ days</div>
+      <div class="legend-item"><span class="legend-swatch status--new">New</span> Added this week</div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="table-wrap fade-in" style="--i: 3">
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Status</th>
+              <th class="num">Coverage</th>
+              <th class="num">Bundle</th>
+              <th class="num">Deps</th>
+              <th>Last Updated</th>
+              <th>Owner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="component-name">Button</span>
+                <span class="component-path">src/components/Button</span>
+              </td>
+              <td><span class="status status--ok">Active</span></td>
+              <td class="num">96%</td>
+              <td class="num">2.1 KB</td>
+              <td class="num">1</td>
+              <td>2 days ago</td>
+              <td>@sarah</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="component-name">DataGrid</span>
+                <span class="component-path">src/components/DataGrid</span>
+              </td>
+              <td><span class="status status--warn">Review</span></td>
+              <td class="num">72%</td>
+              <td class="num">18.4 KB</td>
+              <td class="num">5</td>
+              <td>14 days ago</td>
+              <td>@mike</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="component-name">Modal</span>
+                <span class="component-path">src/components/Modal</span>
+              </td>
+              <td><span class="status status--ok">Active</span></td>
+              <td class="num">91%</td>
+              <td class="num">4.7 KB</td>
+              <td class="num">2</td>
+              <td>5 days ago</td>
+              <td>@alex</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="component-name">Tooltip</span>
+                <span class="component-path">src/components/Tooltip</span>
+              </td>
+              <td><span class="status status--error">Stale</span></td>
+              <td class="num">45%</td>
+              <td class="num">3.2 KB</td>
+              <td class="num">3</td>
+              <td>68 days ago</td>
+              <td>@jordan</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="component-name">Sidebar</span>
+                <span class="component-path">src/components/Sidebar</span>
+              </td>
+              <td><span class="status status--new">New</span></td>
+              <td class="num">88%</td>
+              <td class="num">6.1 KB</td>
+              <td class="num">2</td>
+              <td>Today</td>
+              <td>@sarah</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="component-name">DatePicker</span>
+                <span class="component-path">src/components/DatePicker</span>
+              </td>
+              <td><span class="status status--warn">Review</span></td>
+              <td class="num">68%</td>
+              <td class="num">22.3 KB</td>
+              <td class="num">4</td>
+              <td>21 days ago</td>
+              <td>@mike</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="component-name">Avatar</span>
+                <span class="component-path">src/components/Avatar</span>
+              </td>
+              <td><span class="status status--ok">Active</span></td>
+              <td class="num">100%</td>
+              <td class="num">1.4 KB</td>
+              <td class="num">0</td>
+              <td>1 day ago</td>
+              <td>@alex</td>
+            </tr>
+            <tr>
+              <td>
+                <span class="component-name">Toast</span>
+                <span class="component-path">src/components/Toast</span>
+              </td>
+              <td><span class="status status--ok">Active</span></td>
+              <td class="num">94%</td>
+              <td class="num">3.8 KB</td>
+              <td class="num">1</td>
+              <td>3 days ago</td>
+              <td>@jordan</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">8 of 24 components shown</td>
+              <td class="num">87%</td>
+              <td class="num">62.0 KB</td>
+              <td class="num">18</td>
+              <td colspan="2"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- Collapsible Details -->
+    <h2 class="fade-in" style="--i: 4">Flagged Components</h2>
+
+    <details class="collapsible fade-in" style="--i: 5">
+      <summary>Tooltip — Stale (68 days without update)</summary>
+      <div class="collapsible-body">
+        <div class="ve-label">Issues</div>
+        <ul style="margin: 0.5rem 0; padding-left: 1.25rem; font-size: 0.85rem;">
+          <li>Test coverage dropped from 82% to 45% after refactor</li>
+          <li>Depends on deprecated <code>popperjs@1</code> — should migrate to Floating UI</li>
+          <li>No accessibility tests (missing aria-describedby pattern)</li>
+          <li>Owner @jordan on leave — needs reassignment</li>
+        </ul>
+        <div class="ve-label" style="margin-top: 1rem">Recommendation</div>
+        <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">
+          Reassign to @sarah. Prioritize Floating UI migration before adding new features. Estimated effort: 3-4 hours.
+        </p>
+      </div>
+    </details>
+
+    <details class="collapsible fade-in" style="--i: 6">
+      <summary>DataGrid — Review (coverage below 80%)</summary>
+      <div class="collapsible-body">
+        <div class="ve-label">Issues</div>
+        <ul style="margin: 0.5rem 0; padding-left: 1.25rem; font-size: 0.85rem;">
+          <li>Bundle size is 18.4 KB — largest component, consider code-splitting</li>
+          <li>Virtual scrolling path untested (only tests static rendering)</li>
+          <li>5 dependencies — review for tree-shaking opportunities</li>
+        </ul>
+        <div class="ve-label" style="margin-top: 1rem">Recommendation</div>
+        <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">
+          Add integration tests for virtual scrolling. Audit dependencies — lodash imported for 2 functions, replace with native. Target: 80% coverage, 14 KB bundle.
+        </p>
+      </div>
+    </details>
+
+    <details class="collapsible fade-in" style="--i: 7">
+      <summary>DatePicker — Review (bundle size concern)</summary>
+      <div class="collapsible-body">
+        <div class="ve-label">Issues</div>
+        <ul style="margin: 0.5rem 0; padding-left: 1.25rem; font-size: 0.85rem;">
+          <li>22.3 KB is excessive — bundles all locale data</li>
+          <li>Coverage at 68% — range selection logic untested</li>
+          <li>No keyboard navigation tests</li>
+        </ul>
+        <div class="ve-label" style="margin-top: 1rem">Recommendation</div>
+        <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">
+          Dynamic locale loading would cut bundle to ~8 KB. Add keyboard nav tests per ARIA date picker pattern. Estimated effort: 5-6 hours.
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isLight = html.dataset.theme === 'light';
+      html.dataset.theme = isLight ? '' : 'light';
+      document.querySelector('.theme-icon').textContent = isLight ? '*' : 'o';
+      localStorage.setItem('ve-theme', html.dataset.theme);
+    }
+    (function() {
+      const saved = localStorage.getItem('ve-theme');
+      if (saved !== null) {
+        document.documentElement.dataset.theme = saved;
+        const icon = document.querySelector('.theme-icon');
+        if (icon) icon.textContent = saved === 'light' ? 'o' : '*';
+      }
+    })();
+  </script>
+</body>
+</html>
