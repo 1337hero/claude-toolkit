@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4/fonts/remixicon.css" rel="stylesheet">
   <style>
     :root {
       --bg: #1a1410;
@@ -99,7 +100,7 @@
     /* Section label */
     .ve-label {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
+      font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--text-muted);
@@ -163,7 +164,7 @@
     .pill {
       padding: 0.3em 0.8em;
       border-radius: 999px;
-      font-size: 0.75rem;
+      font-size: 1rem;
       font-weight: 500;
       background: var(--surface);
       color: var(--text-muted);
@@ -249,10 +250,10 @@
     }
     .pipeline-stage .stage-name {
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 1rem;
     }
     .pipeline-stage .stage-desc {
-      font-size: 0.7rem;
+      font-size: 1rem;
       color: var(--text-muted);
       margin-top: 0.25rem;
     }
@@ -262,7 +263,7 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      font-size: 0.7rem;
+      font-size: 1rem;
       color: var(--text-muted);
       margin-top: 0.75rem;
     }
@@ -307,12 +308,12 @@
     }
     .callout-title {
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 1rem;
       margin-bottom: 0.25rem;
     }
     .callout p {
       margin: 0;
-      font-size: 0.85rem;
+      font-size: 1rem;
     }
 
     /* Database visual */
@@ -383,7 +384,7 @@
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-    <span class="theme-icon">*</span>
+    <i class="ri-moon-line theme-icon"></i>
   </button>
 
   <div class="container">
@@ -519,7 +520,8 @@
       const html = document.documentElement;
       const isLight = html.dataset.theme === 'light';
       html.dataset.theme = isLight ? '' : 'light';
-      document.querySelector('.theme-icon').textContent = isLight ? '*' : 'o';
+      const icon = document.querySelector('.theme-icon');
+      icon.className = isLight ? 'ri-moon-line theme-icon' : 'ri-sun-line theme-icon';
       localStorage.setItem('ve-theme', html.dataset.theme);
     }
     (function() {
@@ -527,7 +529,7 @@
       if (saved !== null) {
         document.documentElement.dataset.theme = saved;
         const icon = document.querySelector('.theme-icon');
-        if (icon) icon.textContent = saved === 'light' ? 'o' : '*';
+        if (icon) icon.className = saved === 'light' ? 'ri-sun-line theme-icon' : 'ri-moon-line theme-icon';
       }
     })();
   </script>

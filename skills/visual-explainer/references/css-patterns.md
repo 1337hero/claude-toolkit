@@ -145,7 +145,7 @@ Use `.ve-card` — NOT `.node` which conflicts with Mermaid SVG classes.
 /* Section label with colored dot */
 .ve-label {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -175,7 +175,7 @@ pre {
   padding: 1rem;
   overflow-x: auto;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.5;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -213,7 +213,7 @@ p code, li code, td code {
 .code-file-header {
   padding: 0.4rem 0.75rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: var(--text-muted);
   background: var(--surface-2);
   border-bottom: 1px solid var(--border);
@@ -594,7 +594,7 @@ Center, scale, and provide zoom controls for every Mermaid diagram.
   background: var(--surface-2);
   padding: 0.6rem 0.75rem;
   text-align: left;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -637,7 +637,7 @@ Center, scale, and provide zoom controls for every Mermaid diagram.
   display: inline-block;
   padding: 0.15em 0.5em;
   border-radius: 4px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -808,7 +808,7 @@ Apply with `style="--i: 0"`, `style="--i: 1"`, etc.
 .numbered-list > *::before {
   content: counter(items, decimal-leading-zero);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: var(--accent);
   margin-right: 0.5rem;
 }
@@ -908,7 +908,7 @@ Single breakpoint at 768px. Keep it simple.
   display: inline-block;
   padding: 0.15em 0.5em;
   border-radius: 4px;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -927,7 +927,7 @@ Single breakpoint at 768px. Keep it simple.
   display: inline-block;
   padding: 0.2em 0.6em;
   border-radius: 999px;
-  font-size: 0.65rem;
+  font-size: 1rem;
   font-weight: 500;
   background: var(--surface-2);
   color: var(--text-muted);
@@ -948,7 +948,7 @@ When cards/nodes contain lists:
 }
 .ve-card li {
   padding: 0.15rem 0;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 .ve-card li + li {
   border-top: 1px solid var(--border);
@@ -990,13 +990,13 @@ When cards/nodes contain lists:
   font-family: var(--font-heading);
 }
 .kpi-label {
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: 0.25rem;
 }
-.kpi-trend { font-size: 0.75rem; margin-top: 0.5rem; }
+.kpi-trend { font-size: 1rem; margin-top: 0.5rem; }
 .kpi-trend--up   { color: var(--green); }
 .kpi-trend--down { color: var(--red); }
 .kpi-trend--flat { color: var(--text-muted); }
@@ -1035,7 +1035,7 @@ When cards/nodes contain lists:
 .diff-panel--after  { border-left: 3px solid var(--green); }
 .diff-header {
   padding: 0.5rem 1rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1047,7 +1047,7 @@ When cards/nodes contain lists:
   margin: 0;
   padding: 1rem;
   overflow-x: auto;
-  font-size: 0.85rem;
+  font-size: 1rem;
   border: none;
   border-radius: 0;
 }
@@ -1090,7 +1090,7 @@ When cards/nodes contain lists:
 .collapsible summary::before {
   content: ">";
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   transition: transform 0.2s;
   color: var(--text-muted);
   flex-shrink: 0;
@@ -1204,7 +1204,7 @@ When cards/nodes contain lists:
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin-top: 1rem;
 }
@@ -1249,7 +1249,7 @@ When cards/nodes contain lists:
 }
 .callout-title {
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1rem;
   margin-bottom: 0.25rem;
 }
 ```
@@ -1258,7 +1258,7 @@ When cards/nodes contain lists:
 
 ```html
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-  <span class="theme-icon">*</span>
+  <i class="ri-moon-line theme-icon"></i>
 </button>
 ```
 
@@ -1291,7 +1291,8 @@ function toggleTheme() {
   const html = document.documentElement;
   const isLight = html.dataset.theme === 'light';
   html.dataset.theme = isLight ? '' : 'light';
-  document.querySelector('.theme-icon').textContent = isLight ? '*' : 'o';
+  const icon = document.querySelector('.theme-icon');
+  icon.className = isLight ? 'ri-moon-line theme-icon' : 'ri-sun-line theme-icon';
   localStorage.setItem('ve-theme', html.dataset.theme);
 }
 
@@ -1301,7 +1302,7 @@ function toggleTheme() {
   if (saved !== null) {
     document.documentElement.dataset.theme = saved;
     const icon = document.querySelector('.theme-icon');
-    if (icon) icon.textContent = saved === 'light' ? 'o' : '*';
+    if (icon) icon.className = saved === 'light' ? 'ri-sun-line theme-icon' : 'ri-moon-line theme-icon';
   }
 })();
 ```
@@ -1417,7 +1418,7 @@ Full layout structure with desktop sidebar TOC and mobile horizontal bar.
 }
 
 .nav-title {
-  font-size: 0.7rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -1426,7 +1427,7 @@ Full layout structure with desktop sidebar TOC and mobile horizontal bar.
 }
 
 .nav-link {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-muted);
   text-decoration: none;
   padding: 0.35rem 0.75rem;

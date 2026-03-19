@@ -387,6 +387,56 @@ anime({
 
 ---
 
+## Remix Icon
+
+### CDN
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4/fonts/remixicon.css" rel="stylesheet">
+```
+
+### Usage
+
+Use `<i>` tags with Remix Icon classes:
+
+```html
+<i class="ri-sun-line"></i>        <!-- light mode -->
+<i class="ri-moon-line"></i>       <!-- dark mode -->
+<i class="ri-arrow-right-line"></i>
+<i class="ri-check-line"></i>
+<i class="ri-error-warning-line"></i>
+<i class="ri-information-line"></i>
+<i class="ri-database-2-line"></i>
+<i class="ri-server-line"></i>
+<i class="ri-code-s-slash-line"></i>
+<i class="ri-git-branch-line"></i>
+```
+
+### Style Variants
+
+Every icon has two variants — append `-line` (outline) or `-fill` (solid):
+
+```html
+<i class="ri-star-line"></i>   <!-- outline -->
+<i class="ri-star-fill"></i>   <!-- solid -->
+```
+
+### Sizing
+
+Icons inherit font-size. Size them with CSS:
+
+```css
+.icon-sm { font-size: 1rem; }
+.icon-md { font-size: 1.25rem; }
+.icon-lg { font-size: 1.5rem; }
+```
+
+### Browse Icons
+
+Full icon list: https://remixicon.com/
+
+---
+
 ## Google Fonts
 
 ### Forbidden Fonts

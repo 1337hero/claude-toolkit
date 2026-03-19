@@ -40,7 +40,9 @@ Reference font pairings from `references/libraries.md`. Pick a non-default palet
 Self-contained. Both themes. Responsive.
 
 Required elements:
+- **Minimum font size: 16px (1rem).** No text element should render smaller than 16px. Labels, captions, badges, trends, metadata — all 16px floor. If something feels like it needs to be smaller, reduce its visual weight with color/opacity instead.
 - `<!DOCTYPE html>` with `lang="en"`
+- Remix Icon CDN: `<link href="https://cdn.jsdelivr.net/npm/remixicon@4/fonts/remixicon.css" rel="stylesheet">` — use `ri-*` classes for all icons (theme toggle, callouts, status indicators, etc.). See `references/libraries.md` for usage.
 - CSS variables for theming in `:root` and `[data-theme="light"]`
 - Sticky or fixed navigation for sections longer than one screen
 - Responsive single breakpoint at `768px`
