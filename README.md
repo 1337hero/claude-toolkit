@@ -1,138 +1,124 @@
 # Claude Code Configuration
 
-My working setup for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Skills, agents, hooks, slash commands, output styles, and the `CLAUDE.md` that ties it all together.
+My working setup for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — skills, agents, hooks, slash commands, output styles, and the `CLAUDE.md` that drives it.
 
-This repo lives at `~/Claude` with its folders symlinked into `~/.claude/`:
+Take what's useful, ignore the rest.
 
-```
-~/.claude/CLAUDE.md      → ~/Claude/CLAUDE.md
-~/.claude/agents/        → ~/Claude/agents/
-~/.claude/commands/      → ~/Claude/commands/
-~/.claude/hooks/         → ~/Claude/hooks/
-~/.claude/skills/        → ~/Claude/skills/
-~/.claude/output-styles/ → ~/Claude/output-styles/
-```
+## Quickstart
 
-Clone it, steal what's useful, make it yours.
+The repo lives at `~/Claude` and symlinks into `~/.claude/`:
 
-## What's Here
-
-```
-.
-├── CLAUDE.md              # System prompt — personality, philosophy, workflow rules
-├── agents/                # Subagent definitions (code reviewers, testers, builders, researchers)
-├── commands/              # Slash commands (/remember, /resume, /plan, /diff-review, etc.)
-├── hooks/                 # Lifecycle hooks — session start/end, notifications, validators
-│   ├── sounds/            # Audio cues for agent start/stop and alerts
-│   ├── utils/             # TTS engines, LLM helpers (Anthropic, OpenAI, Ollama)
-│   └── validators/        # Post-tool-use validators (ruff linter, file checks)
-├── skills/                # 31 skills — frontend design, debugging, integrations, code quality
-├── output-styles/         # Response format presets (genui, ultra-concise, markdown, table)
-├── scripts/               # Standalone tools (committer, visual audit)
-└── docs/                  # Design plans and reference material
+```bash
+git clone <your-fork> ~/Claude
+ln -s ~/Claude/CLAUDE.md      ~/.claude/CLAUDE.md
+ln -s ~/Claude/agents         ~/.claude/agents
+ln -s ~/Claude/commands       ~/.claude/commands
+ln -s ~/Claude/hooks          ~/.claude/hooks
+ln -s ~/Claude/skills         ~/.claude/skills
+ln -s ~/Claude/output-styles  ~/.claude/output-styles
 ```
 
-## What's Not Here
+Then create your own `MEMORY.md`, `settings.json`, and the `todos/`, `memories/`, `projects/` directories. They're gitignored — that's where your real context lives.
 
-These are gitignored because they're personal or ephemeral:
+## Reference
+
+### Skills
+
+Coding work:
+
+- **[browser-tools](./skills/browser-tools/SKILL.md)** — Browser automation via Chrome DevTools.
+- **[codebase-documenter](./skills/codebase-documenter/SKILL.md)** — Write READMEs, architecture docs, and code comments.
+- **[commit](./skills/commit/SKILL.md)** — Conventional-commit workflow; read before committing.
+- **[frontend-design](./skills/frontend-design/SKILL.md)** — Distinctive frontend interfaces; no generic AI aesthetics.
+- **[frontend-philosophy](./skills/frontend-philosophy/SKILL.md)** — React/Preact conventions: TanStack Query, no TypeScript, no barrel files.
+- **[improve-codebase-architecture](./skills/improve-codebase-architecture/SKILL.md)** — Consolidate modules, improve testability and AI navigation.
+- **[insecure-defaults](./skills/insecure-defaults/SKILL.md)** — Catch hardcoded secrets, weak auth, permissive config.
+- **[playwright-skill](./skills/playwright-skill/SKILL.md)** — Browser automation with Playwright.
+- **[prototype](./skills/prototype/SKILL.md)** — Build a throwaway prototype to flesh out a design.
+- **[quality-code](./skills/quality-code/SKILL.md)** — Type-safe, well-tested, observable TypeScript.
+- **[requesting-code-review](./skills/requesting-code-review/SKILL.md)** — Verify work meets requirements before merging.
+- **[scaffold-astro](./skills/scaffold-astro/SKILL.md)** — Scaffold Astro projects with Bun + Tailwind.
+- **[skill-creator](./skills/skill-creator/SKILL.md)** — Create or update skills.
+- **[systematic-debugging](./skills/systematic-debugging/SKILL.md)** — Root-cause-first discipline for hard bugs.
+- **[test-driven-development](./skills/test-driven-development/SKILL.md)** — Red-green-refactor loop.
+- **[to-issues](./skills/to-issues/SKILL.md)** — Break a plan into tracer-bullet issues.
+- **[to-prd](./skills/to-prd/SKILL.md)** — Turn a conversation into a PRD and publish it.
+- **[triage](./skills/triage/SKILL.md)** — Triage incoming issues through a state machine.
+- **[using-git-worktrees](./skills/using-git-worktrees/SKILL.md)** — Isolated worktrees for feature work.
+- **[visual-audit](./skills/visual-audit/SKILL.md)** — Screenshot and analyze visual composition.
+
+Writing and communication:
+
+- **[caveman](./skills/caveman/SKILL.md)** — Ultra-compressed output mode; cuts tokens ~75%.
+- **[compress](./skills/compress/SKILL.md)** — Compress memory files (CLAUDE.md, todos) to caveman format.
+- **[writing-clearly-and-concisely](./skills/writing-clearly-and-concisely/SKILL.md)** — Strunk's writing rules for docs, commits, errors, UI copy.
+
+Integrations:
+
+- **[bird](./skills/bird/SKILL.md)** — Twitter/X via the `bird` CLI.
+- **[cloudflare](./skills/cloudflare/SKILL.md)** — Cloudflare API: DNS, Workers, Tunnels, zones.
+- **[gccli](./skills/gccli/SKILL.md)** — Google Calendar CLI.
+- **[gdcli](./skills/gdcli/SKILL.md)** — Google Drive CLI.
+- **[hetzner-cloud](./skills/hetzner-cloud/SKILL.md)** — Hetzner Cloud infrastructure via `hcloud`.
+- **[jarvislabs](./skills/jarvislabs/SKILL.md)** — GPU experiments on JarvisLabs.ai.
+- **[localmaxxing](./skills/localmaxxing/SKILL.md)** — Local-LLM benchmark and eval leaderboards.
+
+### Agents
+
+- **[dhh-code-reviewer](./agents/code-reviewers/dhh-code-reviewer.md)** — JavaScript/TypeScript review in DHH's style.
+- **[go-reviewer](./agents/code-reviewers/go-reviewer.md)** — Idiomatic Go review against Effective Go.
+- **[react-masters-reviewer](./agents/code-reviewers/react-masters-reviewer.md)** — React/Preact review through Linsley, Florence, Dodds, Pocock, Abramov, Browne.
+- **[builder](./agents/team/builder.md)** — Executes one engineering task at a time.
+- **[validator](./agents/team/validator.md)** — Read-only verification that a task met its acceptance criteria.
+- **[api-frontend-tester](./agents/testers/api-frontend-tester.md)** — Systematic API testing with curl.
+- **[api-backend-tester](./agents/testers/api-backend-tester.md)** — Backend testing with pytest and Python tooling.
+- **[test-coverage](./agents/testers/test-coverage.md)** — Add tests retroactively to existing untested code.
+- **[docs-fetcher](./agents/docs-fetcher.md)** — Pull current API references and gotchas before implementing.
+
+### Slash Commands
+
+- **`/plan`** — Write an engineering plan to `specs/`.
+- **`/plan_w_team`** — Same, with a multi-agent team pass.
+- **`/build`** — Implement the plan.
+- **`/pickup`** — Pick up where you left off last session.
+- **`/remember`** — Capture this session's outcome to memory.
+- **`/question`** — Answer questions about the project without writing code.
+- **`/generate-visual-plan`** — Render a feature plan as a visual.
+
+### Hooks
+
+Python scripts (run via `uv` inline deps) wired to Claude Code lifecycle events:
+
+- **Session start/end** — load context, log sessions.
+- **Notifications** — audio cues when Claude needs input.
+- **Validators** — ruff runs after every Python write.
+- **Subagent sounds** — distinct cues per agent type.
+- **TTS** — ElevenLabs, OpenAI, Piper, pyttsx3, Qwen.
+
+### Output Styles
+
+Swap response format on the fly: `genui`, `markdown-focused`, `table-based`, `ultra-concise`.
+
+## What's Gitignored
 
 | Path | Why |
 |------|-----|
-| `MEMORY.md` | Persistent memory — my context, preferences, active state |
-| `settings.json` | Claude Code settings — customize your own |
+| `MEMORY.md` | Persistent context, preferences, active state |
+| `settings.json` | Customize your own |
 | `*.local.json` | Machine-specific overrides |
-| `memories/` | Session snapshots — what happened, decisions made |
+| `memories/` | Session snapshots |
 | `projects/` | Living docs for active work |
 | `todos/` | Task tracking |
 | `.env` | API keys |
 | `logs/`, `status_lines/` | Runtime ephemera |
 
-## Highlights
-
-### CLAUDE.md
-
-The core of the setup. Defines personality, technical philosophy (DHH-inspired simplicity), git safety rules, workflow patterns, and coding conventions. Read it — even if you don't use anything else, a well-crafted `CLAUDE.md` transforms the experience. **BUT YOU SHOULD CUSTOMIZE THIS** - it's styled for me.
-
-### Skills (31)
-
-Each skill is a self-contained capability Claude can invoke. Some I built, some are community skills I've adapted.
-
-**Development:** `frontend-design`, `frontend-philosophy`, `scaffold-astro`, `systematic-debugging`, `playwright-skill`, `browser-tools`, `test-driven-development`, `prototype`, `codebase-documenter`, `improve-codebase-architecture`
-
-**Code Quality:** `quality-code`, `requesting-code-review`, `insecure-defaults`, `visual-audit`
-
-**Planning & Workflow:** `to-prd`, `to-issues`, `triage`, `using-git-worktrees`, `commit`
-
-**Communication & Writing:** `caveman` (ultra-compressed output mode), `compress` (compress memory files), `writing-clearly-and-concisely` (Strunk-inspired prose rules)
-
-**Integrations:** `cloudflare`, `hetzner-cloud`, `bird` (Twitter/X), `gccli` (Google Calendar), `gdcli` (Google Drive), `jarvislabs` (GPU experiments), `localmaxxing` (local-LLM benchmarks)
-
-**Tooling:** `skill-creator`
-
-### Agents (9)
-
-Subagents for parallel and specialized work:
-
-- **Code reviewers** — `dhh-code-reviewer`, `go-reviewer`, `react-masters-reviewer`
-- **Team** — `builder`, `validator`
-- **Testers** — `api-frontend-tester` (curl-based), `api-backend-tester` (pytest), `test-coverage`
-- **Research** — `docs-fetcher`
-
-### Hooks
-
-Python scripts (using `uv` inline dependencies) that fire on Claude Code lifecycle events:
-
-- **Session start/end** — load context, log sessions
-- **Notifications** — audio alerts when Claude needs input
-- **Validators** — ruff linter runs automatically after Python file writes
-- **Subagent sounds** — different audio cues for different agent types starting/stopping
-- **TTS utilities** — ElevenLabs, OpenAI, Piper, pyttsx3, Qwen text-to-speech
-
-### Slash Commands (7)
-
-Custom commands beyond the built-ins:
-
-`/plan` `/plan_w_team` `/build` `/pickup` `/remember` `/question` `/generate-visual-plan`
-
-### Output Styles (4)
-
-Swap Claude's response format on the fly: `genui`, `markdown-focused`, `table-based`, `ultra-concise`.
-
-## How to Use This
-
-**Option 1: Cherry-pick what you want**
-
-Copy individual skills, agents, or hooks into your existing `~/.claude/` setup. Each piece is self-contained.
-
-**Option 2: Read and adapt**
-
-The `CLAUDE.md` alone is worth studying. The patterns - session memory, slash commands for workflow, lifecycle hooks, work regardless of specific implementation.
-
-### After Cloning
-
-1. Create your own `MEMORY.md` (gitignored — this is your persistent context)
-2. Create your own `settings.json` (gitignored — configure permissions, models, MCP servers)
-3. Create `todos/`, `memories/`, `projects/` directories for your session data
-4. Add a `.env` if any hooks need API keys (TTS, etc.)
-
-
 ## Dependencies
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (obviously)
-- [uv](https://github.com/astral-sh/uv) — hooks use `uv run --script` for zero-config Python execution
-- [PipeWire](https://pipewire.org/) — `pw-play` for notification sounds (Linux; swap for `afplay` on macOS)
-- [ruff](https://github.com/astral-sh/ruff) — Python linting validator (auto-installed via `uvx`)
-
-## Philosophy
-
-This setup follows a few principles:
-
-**Convention over configuration.** Skills, agents, and commands follow consistent structures. Adding a new one means copying a template and filling it in.
-
-**Personal over portable.** The gitignored files (memory, settings, todos) are where the real value lives. This repo provides the scaffolding; your context makes it work.
-
-**Composable over monolithic.** Every piece — a single skill, one hook, a slash command — works independently. Take what serves you, ignore the rest.
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+- [uv](https://github.com/astral-sh/uv) — hooks run via `uv run --script`
+- [PipeWire](https://pipewire.org/) — `pw-play` for notification sounds on Linux
+- [ruff](https://github.com/astral-sh/ruff) — Python validator, auto-installed via `uvx`
 
 ## License
 
-[WTFPL](LICENSE). Do what the fuck you want with it.
+[WTFPL](LICENSE)
