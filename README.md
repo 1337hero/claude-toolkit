@@ -26,8 +26,8 @@ Clone it, steal what's useful, make it yours.
 │   ├── sounds/            # Audio cues for agent start/stop and alerts
 │   ├── utils/             # TTS engines, LLM helpers (Anthropic, OpenAI, Ollama)
 │   └── validators/        # Post-tool-use validators (ruff linter, file checks)
-├── skills/                # 47 skills — from frontend design to SEO audits to API integrations
-├── output-styles/         # Response format presets (bullet points, zen master, ultra-concise)
+├── skills/                # 31 skills — frontend design, debugging, integrations, code quality
+├── output-styles/         # Response format presets (genui, ultra-concise, markdown, table)
 ├── scripts/               # Standalone tools (committer, visual audit)
 └── docs/                  # Design plans and reference material
 ```
@@ -53,39 +53,30 @@ These are gitignored because they're personal or ephemeral:
 
 The core of the setup. Defines personality, technical philosophy (DHH-inspired simplicity), git safety rules, workflow patterns, and coding conventions. Read it — even if you don't use anything else, a well-crafted `CLAUDE.md` transforms the experience. **BUT YOU SHOULD CUSTOMIZE THIS** - it's styled for me.
 
-### Skills (47)
+### Skills (31)
 
 Each skill is a self-contained capability Claude can invoke. Some I built, some are community skills I've adapted.
 
-**Development:** `frontend-design`, `frontend-philosophy`, `scaffold-astro`, `mcp-builder`, `web-artifacts-builder`, `systematic-debugging`, `playwright-skill`, `test-driven-development`, `codebase-documenter`
+**Development:** `frontend-design`, `frontend-philosophy`, `scaffold-astro`, `systematic-debugging`, `playwright-skill`, `browser-tools`, `test-driven-development`, `prototype`, `codebase-documenter`, `improve-codebase-architecture`
 
-**Design:** `awwwards-design`, `mk3y-design`, `ui-ux-pro-max`, `canvas-design`, `visual-audit`, `visual-explainer`
+**Code Quality:** `quality-code`, `requesting-code-review`, `insecure-defaults`, `visual-audit`
 
-**Writing & Marketing:** `copywriting`, `writing-clearly-and-concisely`, `doc-coauthoring`, `brand-identity`, `marketing-psychology`, `competitive-analysis`
+**Planning & Workflow:** `to-prd`, `to-issues`, `triage`, `using-git-worktrees`, `commit`
 
-**SEO:** `seo-audit`, `seo-competitor-analysis`, `programmatic-seo`
+**Communication & Writing:** `caveman` (ultra-compressed output mode), `compress` (compress memory files), `writing-clearly-and-concisely` (Strunk-inspired prose rules)
 
-**Research:** `mckinsey-research`, `audit-website`
+**Integrations:** `cloudflare`, `hetzner-cloud`, `bird` (Twitter/X), `gccli` (Google Calendar), `gdcli` (Google Drive), `jarvislabs` (GPU experiments), `localmaxxing` (local-LLM benchmarks)
 
-**Code Quality:** `requesting-code-review`, `receiving-code-review`, `insecure-defaults`, `verification-before-completion`, `ask-questions-if-underspecified`
+**Tooling:** `skill-creator`
 
-**Workflow:** `brainstorming`, `dispatching-parallel-agents`, `using-git-worktrees`, `finishing-a-development-branch`, `save-money`
-
-**Integrations:** `api-gateway` (90+ third-party APIs — Slack, HubSpot, Stripe, Google Workspace, etc.), `cloudflare`, `email-best-practices`, `bird` (Twitter/X)
-
-**Business:** `bookkeeping-basics`
-
-**Tooling:** `pdf`, `tmux`, `uv`, `commit`, `skill-creator`
-
-### Agents (19)
+### Agents (9)
 
 Subagents for parallel and specialized work:
 
-- **Code reviewers** — DHH-style, React/Preact masters, Rust, component analysis
-- **Team** — builder, validator, Next.js expert, React/TypeScript specialist
-- **Testers** — API frontend (curl-based), API backend (pytest), test writer
-- **Research** — system architect, docs fetcher, PRD writer, YouTube API expert, LLM/AI research
-- **Utilities** — meta-agent (creates new agents), training data generator, Hono stack scaffolder
+- **Code reviewers** — `dhh-code-reviewer`, `go-reviewer`, `react-masters-reviewer`
+- **Team** — `builder`, `validator`
+- **Testers** — `api-frontend-tester` (curl-based), `api-backend-tester` (pytest), `test-coverage`
+- **Research** — `docs-fetcher`
 
 ### Hooks
 
@@ -97,15 +88,15 @@ Python scripts (using `uv` inline dependencies) that fire on Claude Code lifecyc
 - **Subagent sounds** — different audio cues for different agent types starting/stopping
 - **TTS utilities** — ElevenLabs, OpenAI, Piper, pyttsx3, Qwen text-to-speech
 
-### Slash Commands (20)
+### Slash Commands (7)
 
 Custom commands beyond the built-ins:
 
-`/remember` `/resume` `/plan` `/build` `/prime` `/diff-review` `/fact-check` `/plan-review` `/project-recap` `/web-diagram` `/question` `/memories` `/save-thread` `/sentient` `/reconnect` and more.
+`/plan` `/plan_w_team` `/build` `/pickup` `/remember` `/question` `/generate-visual-plan`
 
-### Output Styles
+### Output Styles (4)
 
-Swap Claude's response format on the fly: `bullet-points`, `ultra-concise`, `table-based`, `yaml-structured`, `markdown-focused`, `zen-master`, `tts-summary`, `genui`.
+Swap Claude's response format on the fly: `genui`, `markdown-focused`, `table-based`, `ultra-concise`.
 
 ## How to Use This
 
