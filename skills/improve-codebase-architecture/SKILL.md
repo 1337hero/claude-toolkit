@@ -1,6 +1,6 @@
 ---
 name: improve-codebase-architecture
-description: "Find architecture improvements using CONTEXT.md and docs/adr/. Consolidate modules, improve testability, AI navigation. Trigger: improve architecture, refactor."
+description: "Find architecture improvements: consolidate modules, improve testability and AI navigation. Trigger: improve architecture, refactor."
 ---
 
 # Improve Codebase Architecture

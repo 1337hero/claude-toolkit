@@ -1,6 +1,6 @@
 ---
 name: codebase-documenter
-description: "Write codebase docs: README, architecture, comments, API. Getting-started, project structure, beginner-friendly. Templates and best practices."
+description: "Write codebase docs: README, architecture, API, comments. Project structure and getting-started focus."
 ---
 
 # Codebase Documenter

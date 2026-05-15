@@ -1,6 +1,6 @@
 ---
 name: insecure-defaults
-description: "Detect fail-open insecure defaults: hardcoded secrets, weak auth, permissive security. Use: security audits, config review, env variable handling."
+description: "Detect fail-open insecure defaults: hardcoded secrets, weak auth, permissive config. Use for security audits."
 allowed-tools:
   - Read
   - Grep

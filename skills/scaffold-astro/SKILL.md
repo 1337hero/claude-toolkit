@@ -1,6 +1,6 @@
 ---
 name: scaffold-astro
-description: "Scaffold Astro projects: new site, restructure, reorganize. Bun + Tailwind, component extraction, directories. Trigger: scaffold astro, new astro project."
+description: "Scaffold or restructure Astro projects with Bun + Tailwind. Trigger: scaffold astro, new astro project."
 ---
 
 # Scaffold Astro

@@ -1,6 +1,6 @@
 ---
 name: hcloud
-description: Manage Hetzner Cloud infrastructure using the hcloud CLI. Use when the user needs to create/manage servers, volumes, networks, firewalls, load balancers, floating IPs, primary IPs, SSH keys, images, certificates, placement groups, storage boxes, DNS zones, or any Hetzner Cloud resource. Also use for hcloud setup, context management, scripting hcloud commands, CI/CD automation with Hetzner, or generating hcloud command sequences. Triggers on mentions of "hcloud", "hetzner", "hetzner cloud", or any Hetzner infrastructure task.
+description: "Manage Hetzner Cloud infrastructure via the hcloud CLI. Trigger: \"hcloud\", \"hetzner\", any Hetzner task."
 ---
 
 # hcloud CLI

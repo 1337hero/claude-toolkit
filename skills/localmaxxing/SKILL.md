@@ -1,6 +1,6 @@
 ---
 name: localmaxxing
-description: Interact with the LocalMaxxing API (benchmarks + evals leaderboards for local LLMs). Use when the user mentions LocalMaxxing, submitting benchmarks, the local-reasoning-mini eval, or pushing tok/s + scores to the leaderboard.
+description: "LocalMaxxing API for local-LLM benchmark + eval leaderboards. Trigger: submitting benchmarks, pushing tok/s or eval scores."
 ---
 
 # LocalMaxxing API

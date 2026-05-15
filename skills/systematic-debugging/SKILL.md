@@ -1,6 +1,6 @@
 ---
 name: systematic-debugging
-description: "Diagnose hard bugs, regressions, test failures, unexpected behavior. Feedback-loop discipline + root-cause first. Trigger: diagnose, debug, broken, throwing, performance, test failure."
+description: "Diagnose hard bugs, regressions, and test failures via feedback-loop discipline and root-cause first. Trigger: diagnose, debug, broken."
 ---
 
 # Systematic Debugging

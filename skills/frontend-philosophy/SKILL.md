@@ -1,6 +1,6 @@
 ---
 name: frontend-philosophy
-description: "Frontend design: React/Preact, server state with TanStack Query, 8-section components, no useCallback/useEffect sync, no barrel files, no TypeScript."
+description: "React/Preact frontend conventions: TanStack Query for server state, 8-section components, no TypeScript, no barrel files."
 ---
 
 # Frontend Philosophy

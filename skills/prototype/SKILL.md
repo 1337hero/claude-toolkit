@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: "Build throwaway prototype: terminal app for state/logic, or UI variations from one route. Flesh out design, test models. Trigger: prototype this, let me play."
+description: "Build throwaway prototype — terminal app for state/logic, or UI variations. Trigger: prototype this, let me play."
 ---
 
 # Prototype

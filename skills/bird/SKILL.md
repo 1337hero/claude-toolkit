@@ -1,6 +1,6 @@
 ---
 name: bird
-description: "Read and post to Twitter/X using the `bird` CLI. Full surface: tweets, threads, search, timelines, bookmarks, likes, follows, lists, trending, media. Handles Firefox cookie extraction."
+description: "Read and post to Twitter/X via the `bird` CLI — tweets, threads, search, timelines, bookmarks, follows, lists, media."
 ---
 
 ## Auth: Extract Firefox Cookies
