@@ -1,6 +1,6 @@
 ---
 name: visual-audit
-description: Screenshot websites and analyze visual composition against design principles (golden ratio, rule of thirds, spacing, hierarchy). Use after building or modifying UI components to verify visual quality before presenting to user.
+description: "Screenshot and analyze visual composition: golden ratio, rule of thirds, spacing, hierarchy. Verify UI quality before presenting."
 ---
 
 # Visual Audit

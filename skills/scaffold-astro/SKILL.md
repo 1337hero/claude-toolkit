@@ -1,6 +1,6 @@
 ---
 name: scaffold-astro
-description: Scaffold and structure Astro projects following established conventions. Use when creating a new Astro site, restructuring an existing Astro project, or when the user says "scaffold astro", "new astro project", "set up an astro site", or wants to reorganize an Astro codebase to follow standard patterns. Handles Bun + Tailwind setup, component extraction, and directory organization.
+description: "Scaffold Astro projects: new site, restructure, reorganize. Bun + Tailwind, component extraction, directories. Trigger: scaffold astro, new astro project."
 ---
 
 # Scaffold Astro
@@ -115,6 +115,61 @@ import { socialLinks } from "../data/social";
   ))}
 </section>
 ```
+
+## Astro Framework Idioms
+
+Beyond directory structure, lean on what Astro gives you:
+
+### Islands & client directives
+- Default to **zero JS**. Static markup stays in `.astro` components.
+- Reach for a framework component (React/Preact) only when you need real interactivity, and pair it with the right client directive:
+  - `client:load` — hydrate immediately (rare; only above-fold critical interactivity)
+  - `client:idle` — hydrate when the browser is idle (most interactive widgets)
+  - `client:visible` — hydrate when scrolled into view (below-fold)
+  - `client:media` — hydrate only when a media query matches
+- Audit `client:*` usage regularly. Each directive ships JS.
+
+### Content collections
+- Use **content collections** for any structured content (blog, docs, projects) — not loose markdown + `Astro.glob`.
+- Define a **Zod schema** per collection in `src/content/config.ts` so frontmatter is type-checked.
+- Read collections with `getCollection('blog')` / `getEntry('blog', slug)`.
+
+### Slots over content props
+- Compose layouts with `<slot />` (default) and named slots (`<slot name="header" />`).
+- Don't pass HTML as a prop string.
+
+### Styling
+- `<style>` blocks in `.astro` files are **scoped by default** — keep it that way.
+- `is:global` only for true global overrides; never for component styles.
+
+### Images
+- `import { Image, Picture } from 'astro:assets'` — the built-in `<Image />` optimizes local images.
+- Use `<Picture />` for art direction / multiple formats.
+- Never `<img>` for local image assets.
+
+### View Transitions
+- Add `<ViewTransitions />` in `BaseHead.astro` for smooth page transitions.
+- `transition:name="hero"` on elements that should morph across pages.
+- `transition:persist` on stateful elements (audio/video players, sidebars) that must survive navigation.
+
+### SEO defaults
+- Use `@astrojs/sitemap` for automatic sitemap generation.
+- Use `@astrojs/rss` for content sites that need a feed.
+- Canonical URL: `<link rel="canonical" href={Astro.url}>` in `BaseHead.astro`.
+
+### Rendering mode
+- Pure marketing site → `output: 'static'`.
+- Mix of static + dynamic routes → `output: 'hybrid'`.
+- Fully dynamic app → `output: 'server'` with the right adapter.
+- Don't reach for SSR unless a page genuinely needs per-request data.
+
+### Security
+- `set:html` only on **trusted** content. Never on raw user input.
+- Validate API route input with Zod before doing anything with it.
+
+### Performance
+- `prefetch` integration for instant subsequent navigations.
+- Run `bun run build` and check the JS bundle output — anything unexpected? Audit your client directives.
 
 ## Template Assets
 

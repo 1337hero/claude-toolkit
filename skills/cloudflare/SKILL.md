@@ -1,6 +1,6 @@
 ---
 name: cloudflare
-description: Interact with Cloudflare APIs (DNS, Workers, Tunnels, zones, etc). Use when the user mentions Cloudflare, DNS records, CF tunnels, Workers, or asks to manage domains/zones on Cloudflare.
+description: "Cloudflare APIs: DNS, Workers, Tunnels, zones. Trigger: Cloudflare, DNS records, manage domains."
 ---
 
 # Cloudflare API
@@ -10,7 +10,7 @@ description: Interact with Cloudflare APIs (DNS, Workers, Tunnels, zones, etc). 
 Load the API token before any Cloudflare API call:
 
 ```bash
-export $(grep CF_API_TOKEN /home/mikekey/.env | xargs)
+export $(grep CF_API_TOKEN ~/.env | xargs)
 ```
 
 Then use it in requests:

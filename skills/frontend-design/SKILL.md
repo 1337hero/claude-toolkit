@@ -1,7 +1,6 @@
 ---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.
-license: Complete terms in LICENSE.txt
+description: "Create distinctive frontend interfaces: components, pages, dashboards, React, HTML/CSS. Polished code, no generic AI aesthetics."
 ---
 
 This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
@@ -35,7 +34,7 @@ Focus on:
 
 NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
 
-Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space Grotesk, for example) across generations.
+Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. Avoid converging on the same fonts across generations. **Exception:** When mk3y-design is active, use its specified fonts (Space Grotesk + JetBrains Mono).
 
 **IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
 
@@ -76,6 +75,8 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - Placeholders end with `…` and show example pattern
 - `autocomplete="off"` on non-auth fields to avoid password manager triggers
 - Warn before navigation with unsaved changes (`beforeunload` or router guard)
+- Mark required fields explicitly (asterisk or `(required)` text)
+- Password fields: include a show/hide visibility toggle
 
 ### Animation
 
@@ -85,6 +86,8 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - Set correct `transform-origin`
 - SVG: transforms on `<g>` wrapper with `transform-box: fill-box; transform-origin: center`
 - Animations interruptible—respond to user input mid-animation
+- Duration: 150–300ms for micro-interactions; never >500ms for UI transitions
+- Easing: `ease-out` for entering, `ease-in` for exiting; never `linear` for UI
 
 ### Typography
 
@@ -94,6 +97,10 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - Loading states end with `…`: `"Loading…"`, `"Saving…"`
 - `font-variant-numeric: tabular-nums` for number columns/comparisons
 - Use `text-wrap: balance` or `text-pretty` on headings (prevents widows)
+- Body line-height 1.5–1.75; tighter for headings (1.1–1.3)
+- Body line-length 65–75ch max (use `max-w-prose` or equivalent)
+- Mobile body text minimum 16px (anything smaller triggers iOS zoom-on-focus)
+- Use a consistent modular scale for sizes—no arbitrary one-off values
 
 ### Content Handling
 
@@ -131,12 +138,17 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - `overscroll-behavior: contain` in modals/drawers/sheets
 - During drag: disable text selection, `inert` on dragged elements
 - `autoFocus` sparingly—desktop only, single primary input; avoid on mobile
+- Touch targets minimum 44×44px (WCAG 2.5.5)
+- Minimum 8px spacing between adjacent touch targets
+- Never rely on hover alone for primary actions—touch devices have no hover
 
 ### Safe Areas & Layout
 
 - Full-bleed layouts need `env(safe-area-inset-*)` for notches
 - Avoid unwanted scrollbars: `overflow-x-hidden` on containers, fix content overflow
 - Flex/grid over JS measurement for layout
+- Use `dvh` (dynamic viewport height) instead of `100vh` for full-screen mobile layouts — `100vh` breaks under mobile browser chrome
+- Define a z-index scale (e.g. 10/20/30/50/100) and stick to it; never arbitrary `z-index: 9999`
 
 ### Dark Mode & Theming
 
@@ -160,6 +172,16 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 
 - Buttons/links need `hover:` state (visual feedback)
 - Interactive states increase contrast: hover/active/focus more prominent than rest
+- Disabled state: reduced opacity + `cursor-not-allowed`; visually distinct from enabled
+- Loading buttons: disable + spinner during request (prevents double-submit)
+
+### Feedback
+
+- Show a loading indicator for any operation > ~300ms (spinner or skeleton)
+- Skeletons over spinners when you can match the final shape
+- Toast notifications auto-dismiss in 3–5 seconds; never permanent
+- Multi-step processes need a progress indicator (steps or bar)
+- Confirm successful destructive/async actions visually—silence reads as failure
 
 ### Content & Copy
 
@@ -170,6 +192,31 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - Error messages include fix/next step, not just problem
 - Second person; avoid first person
 - `&` over "and" where space-constrained
+
+### Tailwind Patterns
+
+- Define a **z-index scale** in config (`z-10 / z-20 / z-30 / z-40 / z-50`). Never arbitrary `z-[9999]`. Fixed nav → `z-50`, dropdowns → `z-40`.
+- **Opacity utilities** over separate opacity classes: `bg-black/50`, `text-white/80`.
+- **Theme colors directly**: `bg-primary`, `text-success` — never `bg-[var(--color-primary)]`.
+- **Space utilities** over per-child margins: `space-y-4`, `space-x-2`, `gap-4` on flex/grid.
+- **`group` / `peer`** for parent/sibling-state styling — don't reach for JS for simple hover/focus reveal.
+- **Arbitrary values `[...]`** for genuine one-offs (`w-[350px]`); if it's reused, add it to the theme.
+- **`size-*`** for square dimensions (`size-6`) instead of separate `w-6 h-6`.
+- **`shrink-0`** / `shrink` shorthands over `flex-shrink-0`.
+- **Container queries**: `@container` + `@lg:` for component-internal responsiveness — media queries are for the page, container queries are for the component.
+- **Dark mode** via `dark:` prefix on the same element, not a parallel stylesheet.
+- **Animate utilities** (`animate-pulse`, `animate-spin`) over hand-rolled `@keyframes` for common effects. `animate-bounce` only on a single CTA, never multiples (motion sickness).
+- **Transition durations** in the 150–300ms band: `duration-150` to `duration-300`. Never `duration-1000+` for UI.
+- **`focus-visible:ring-2`** for keyboard focus, not `focus:ring-2` (avoids ring on mouse click).
+- **`motion-reduce:animate-none`** on anything that animates to honor `prefers-reduced-motion`.
+- **Min height for touch**: `min-h-[44px]` on mobile buttons.
+- **`disabled:` variants**: `disabled:opacity-50 disabled:cursor-not-allowed` on interactive elements.
+- **Prose plugin** (`@tailwindcss/typography`): `prose prose-lg` for long-form/markdown content instead of restyling headings manually.
+- **Configure `content` paths** in `tailwind.config` precisely — anything missed gets purged at build.
+- **Avoid `@apply` bloat** — utilities in markup beat a wall of `@apply` rules. Use it sparingly for true component-level abstractions.
+- **Official plugins** over hand-rolls: `@tailwindcss/forms`, `typography`, `aspect-ratio`.
+- **SVG explicit dimensions**: `<svg class="size-6" width="24" height="24">` — prevents layout shift before CSS loads.
+- **v4 gradient syntax**: `bg-linear-to-r` (the old `bg-gradient-to-r` is deprecated in v4).
 
 ### Anti-patterns (flag these)
 

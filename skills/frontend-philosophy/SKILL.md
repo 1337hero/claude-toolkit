@@ -1,15 +1,6 @@
 ---
 name: frontend-philosophy
-description: >
-  Frontend design philosophy and coding conventions for React/Preact applications.
-  Enforces DHH-inspired simplicity, 8-section component structure, TanStack Query
-  server state management, and strict anti-patterns (no useCallback, no useEffect
-  for state sync, no barrel files, no TypeScript). Use when: (1) scaffolding new
-  frontend projects, (2) building React/Preact components, (3) implementing features
-  with state management, (4) reviewing or refactoring frontend code, (5) setting up
-  project structure and file organization. Triggers on: "scaffold", "new project",
-  "build a component", "create a page", "add a feature", "frontend", "React",
-  "Preact", or any frontend implementation task.
+description: "Frontend design: React/Preact, server state with TanStack Query, 8-section components, no useCallback/useEffect sync, no barrel files, no TypeScript."
 ---
 
 # Frontend Philosophy
@@ -200,5 +191,3 @@ Before shipping, ask:
 1. Can a junior dev understand this?
 2. Is this the simplest solution that works?
 3. Does this follow existing patterns in the codebase?
-4. Is the complexity justified by real requirements?
-5. Will this be maintainable in 6 months?
