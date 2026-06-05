@@ -31,9 +31,9 @@ Coding work:
 - **[commit](./skills/commit/SKILL.md)** — Conventional-commit workflow; read before committing.
 - **[frontend-design](./skills/frontend-design/SKILL.md)** — Distinctive frontend interfaces; no generic AI aesthetics.
 - **[frontend-philosophy](./skills/frontend-philosophy/SKILL.md)** — React/Preact conventions: TanStack Query, no TypeScript, no barrel files.
+- **[handoff](./skills/handoff/SKILL.md)** — Compact current work into a document for another agent.
 - **[improve-codebase-architecture](./skills/improve-codebase-architecture/SKILL.md)** — Consolidate modules, improve testability and AI navigation.
 - **[insecure-defaults](./skills/insecure-defaults/SKILL.md)** — Catch hardcoded secrets, weak auth, permissive config.
-- **[playwright-skill](./skills/playwright-skill/SKILL.md)** — Browser automation with Playwright.
 - **[prototype](./skills/prototype/SKILL.md)** — Build a throwaway prototype to flesh out a design.
 - **[quality-code](./skills/quality-code/SKILL.md)** — Type-safe, well-tested, observable TypeScript.
 - **[requesting-code-review](./skills/requesting-code-review/SKILL.md)** — Verify work meets requirements before merging.
