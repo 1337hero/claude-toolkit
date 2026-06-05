@@ -1,7 +1,7 @@
 ---
 name: validator
 description: Read-only validation agent that checks if a task was completed successfully. Use after a builder finishes to verify work meets acceptance criteria.
-model: sonnet
+model: claude-opus-4-5-20251101
 disallowedTools: Write, Edit, NotebookEdit
 color: yellow
 ---
