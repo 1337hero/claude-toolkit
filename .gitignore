@@ -32,3 +32,7 @@ status_lines/
 **/__pycache__/
 *.log
 *.temp-execution-*
+
+# Hook binaries (rebuilt from source)
+hooks/pre_compact
+hooks/permission_request
