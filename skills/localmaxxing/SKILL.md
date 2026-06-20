@@ -166,7 +166,18 @@ Successful 201s include `X-RateLimit-Remaining` (0|1) and `X-RateLimit-Reset` (U
 ## Benchmark submission
 
 Required: `hfId`, `quantization`, `engineName`, `hardware`, `tokSOut`, plus ≥1 secondary
-metric (`ttftMs`, `prefillTokS`, `tokSTotal`, or `peakVramGb`).
+metric (`ttftMs`, `tokSPrefill`, `tokSTotal`, or `peakVramGb`).
+
+**Field-name gotcha:** the prefill field is **`tokSPrefill`** (matches the GET response shape),
+NOT `prefillTokS`. `/dry-run` returns `valid:true` either way but silently drops the wrong
+name, so the real POST then 400s with "at least one additional metric required" (or stores a
+blank PREFILL column). Always confirm the secondary metric echoes back in `dry-run.parsed`.
+
+**Prompt-cache gotcha (TTFT/prefill):** llama-server/llama-swap default `cache_prompt:true`,
+so a best-of-N loop over an identical prompt makes runs 2..N cache hits — TTFT collapses to
+~25ms and prefill inflates to absurd values (this is why old runs showed TTFT≈30ms). Send
+`"cache_prompt": false` in every benchmark request to force a cold prefill each run. Decode
+(tokSOut) is unaffected. Both `bench_lm.py` and `bench_mac.py` set this.
 
 Optional: `engineVersion`, `backend`, `promptTokens`, `outputTokens`, `contextLength`,
 `batchSize`, `engineFlags{}`, `notes` (≤2000 chars).
@@ -234,14 +245,23 @@ Result-record shape that validated in dry-run:
 
 ## Mike's setup (defaults)
 
+**archbox** (primary):
 - Public OpenAI-compat endpoint: `https://llama.mk3y.com/v1` (Cloudflare tunnel → llama-swap on archbox)
 - Hardware: 3× R9700, 96 GB VRAM, 5950X, 64 GB RAM, Arch
 - Engine for GGUF runs: `llama.cpp` Vulkan (`backend=vulkan`)
 - Engine for MXFP4 vLLM runs: `vllm`, quant `MXFP4_MOE`
 
+**macbook** (Apple-silicon comparison rig, added 2026-06-05):
+- SSH: `ssh macbook` — passwordless via `~/.ssh/macbook` key (IdentitiesOnly). No llama-swap.
+- Hardware: Apple M1 Max, 64 GB unified, macOS 15.7.7 → `hwClass: UNIFIED`, `chipVariant: "M1 Max"`, `backend: metal`
+- llama.cpp: prebuilt **b9535** at `~/llamacpp/llama-b9535/` (Metal). Run binaries with `DYLD_LIBRARY_PATH=` that dir.
+- Models in `~/models/`. `uv` installed at `~/.local/bin`.
+- Bench: **`~/models/bench_mac.py`** (port of bench_lm.py) — start `llama-server` then run it; submit from archbox or set the key.
+- For UNIFIED entries `backend` stays `null` server-side (matches canonical Apple example) — that's normal, not a drop.
+
 ## Rules
 
-- Always dry-run before real submit — rate limit is 1/5 min, you don't want to burn it on a schema error
+- Always dry-run before real submit — don't burn a submit on a schema error. (Observed limit is ~30/window per `X-RateLimit-Limit`, not 1/5min — read `X-RateLimit-Remaining`/`-Reset` headers rather than trusting a fixed number. Submissions now auto-APPROVE.)
 - API key lives in `/home/mikekey/.env` as `LOCALMAXXING_API_KEY` — never inline it in commands the user sees
 - For `/api/evals/execute` the endpoint **must be publicly reachable from the LocalMaxxing servers** — Tailscale-only / localhost endpoints fail
 - HF model id (`hfId` / `modelHfId`) must be the **upstream base model repo** (e.g. `Qwen/Qwen3.5-122B-A10B`), not a quant-distribution repo (e.g. `noctrex/...-GGUF`). Put the quant string only in the `quantization` field. Use `/api/models/search?q=…` to resolve fuzzy names. Confusingly, `/dry-run` accepts GGUF repo ids; the real `/api/benchmarks` rejects them with 400 + a `suggestedHfId` hint.

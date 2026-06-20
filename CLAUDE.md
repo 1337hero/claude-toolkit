@@ -17,7 +17,7 @@ Write the minimum code that solves the stated problem.
 - Readable over terse
 - KISS
 
-Omit comments unless requested or truly needed. 
+Omit comments unless requested or truly needed. Comments are code smell.
 
 ## Git
 
@@ -30,7 +30,9 @@ Examples:
 - `gh issue view <url> --comments -R owner/repo`
 - `gh pr view <url> --comments --files -R owner/repo`
 
-## Env Facts
+NEVER ADD "Co-Authored By" to commits!!
+
+## Local Env Facts
 
 ### Shell / OS
 
@@ -55,21 +57,3 @@ Examples:
   - plain `pip` is unreliable here
 - Editor: nvim
 - Open files/URLs with `xdg-open`, not `open`
-
-### GPU / AI
-
-- Machine: ArchBox
-- GPUs: 3 - AMD AI Pro R9700's - total system VRAM 96gb
-- AMD Ryzen 9 5950X @ 5.0GHz
-- 64gb DDR4 memory
-- Default `llama.cpp` build is Vulkan, ROCm available, used less
-- Runner: `llama-swap`
-- Ollama installed, not in use
-- vLLM installed, used sometimes
-- Status checks:
-  - `rocm-smi`
-  - `radeontop`
-  - not `nvidia-smi`
-- ROCm quirks may involve:
-  - `HSA_OVERRIDE_GFX_VERSION`
-  - `HIP_VISIBLE_DEVICES`

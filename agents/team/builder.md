@@ -1,7 +1,7 @@
 ---
 name: builder
 description: Generic engineering agent that executes ONE task at a time. Use when work needs to be done - writing code, creating files, implementing features.
-model: sonnet
+model: claude-opus-4-5-20251101
 color: cyan
 hooks:
   PostToolUse:
