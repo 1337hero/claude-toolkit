@@ -18,7 +18,7 @@ ln -s ~/Claude/skills         ~/.claude/skills
 ln -s ~/Claude/output-styles  ~/.claude/output-styles
 ```
 
-Then create your own `MEMORY.md`, `settings.json`, and the `todos/`, `memories/`, `projects/` directories. They're gitignored — that's where your real context lives.
+Then create your own `MEMORY.md`, `settings.json`, and the `todos/`, `memories/`, `projects/`, `docs/` directories. They're gitignored — that's where your real context lives.
 
 ## Reference
 
@@ -33,34 +33,29 @@ Coding work:
 - **[frontend-philosophy](./skills/frontend-philosophy/SKILL.md)** — React/Preact conventions: TanStack Query, no TypeScript, no barrel files.
 - **[handoff](./skills/handoff/SKILL.md)** — Compact current work into a document for another agent.
 - **[improve-codebase-architecture](./skills/improve-codebase-architecture/SKILL.md)** — Consolidate modules, improve testability and AI navigation.
-- **[insecure-defaults](./skills/insecure-defaults/SKILL.md)** — Catch hardcoded secrets, weak auth, permissive config.
+- **[playwright-skill](./skills/playwright-skill/SKILL.md)** — Browser automation with Playwright; auto-detects dev servers.
+- **[ponytail](./skills/ponytail/SKILL.md)** — Forces the laziest solution that works: YAGNI, stdlib before deps.
+- **[ponytail-audit](./skills/ponytail-audit/SKILL.md)** — Whole-repo audit for over-engineering; ranked delete/simplify list.
+- **[ponytail-review](./skills/ponytail-review/SKILL.md)** — Diff review that hunts over-engineering only.
 - **[prototype](./skills/prototype/SKILL.md)** — Build a throwaway prototype to flesh out a design.
 - **[quality-code](./skills/quality-code/SKILL.md)** — Type-safe, well-tested, observable TypeScript.
-- **[requesting-code-review](./skills/requesting-code-review/SKILL.md)** — Verify work meets requirements before merging.
-- **[scaffold-astro](./skills/scaffold-astro/SKILL.md)** — Scaffold Astro projects with Bun + Tailwind.
-- **[skill-creator](./skills/skill-creator/SKILL.md)** — Create or update skills.
 - **[systematic-debugging](./skills/systematic-debugging/SKILL.md)** — Root-cause-first discipline for hard bugs.
 - **[test-driven-development](./skills/test-driven-development/SKILL.md)** — Red-green-refactor loop.
-- **[to-issues](./skills/to-issues/SKILL.md)** — Break a plan into tracer-bullet issues.
-- **[to-prd](./skills/to-prd/SKILL.md)** — Turn a conversation into a PRD and publish it.
-- **[triage](./skills/triage/SKILL.md)** — Triage incoming issues through a state machine.
+- **[thermo-nuclear-code-quality-review](./skills/thermo-nuclear-code-quality-review/SKILL.md)** — Extremely strict maintainability review.
 - **[using-git-worktrees](./skills/using-git-worktrees/SKILL.md)** — Isolated worktrees for feature work.
 - **[visual-audit](./skills/visual-audit/SKILL.md)** — Screenshot and analyze visual composition.
 
 Writing and communication:
 
 - **[caveman](./skills/caveman/SKILL.md)** — Ultra-compressed output mode; cuts tokens ~75%.
-- **[compress](./skills/compress/SKILL.md)** — Compress memory files (CLAUDE.md, todos) to caveman format.
 - **[writing-clearly-and-concisely](./skills/writing-clearly-and-concisely/SKILL.md)** — Strunk's writing rules for docs, commits, errors, UI copy.
 
 Integrations:
 
 - **[bird](./skills/bird/SKILL.md)** — Twitter/X via the `bird` CLI.
 - **[cloudflare](./skills/cloudflare/SKILL.md)** — Cloudflare API: DNS, Workers, Tunnels, zones.
-- **[gccli](./skills/gccli/SKILL.md)** — Google Calendar CLI.
-- **[gdcli](./skills/gdcli/SKILL.md)** — Google Drive CLI.
-- **[hetzner-cloud](./skills/hetzner-cloud/SKILL.md)** — Hetzner Cloud infrastructure via `hcloud`.
 - **[jarvislabs](./skills/jarvislabs/SKILL.md)** — GPU experiments on JarvisLabs.ai.
+- **[llama-tune](./skills/llama-tune/SKILL.md)** — Empirically tune GGUF models on a multi-GPU rig (llama.cpp/llama-swap).
 - **[localmaxxing](./skills/localmaxxing/SKILL.md)** — Local-LLM benchmark and eval leaderboards.
 
 ### Agents
@@ -80,24 +75,36 @@ Integrations:
 - **`/plan`** — Write an engineering plan to `specs/`.
 - **`/plan_w_team`** — Same, with a multi-agent team pass.
 - **`/build`** — Implement the plan.
-- **`/pickup`** — Pick up where you left off last session.
-- **`/remember`** — Capture this session's outcome to memory.
 - **`/question`** — Answer questions about the project without writing code.
-- **`/generate-visual-plan`** — Render a feature plan as a visual.
+
+### Workflows
+
+Deterministic multi-agent orchestration scripts, run via the `Workflow` tool:
+
+- **[code-quality-enforcer](./workflows/code-quality-enforcer.js)** — DHH craft + six React masters + house rules, every finding adversarially verified.
 
 ### Hooks
 
-Python scripts (run via `uv` inline deps) wired to Claude Code lifecycle events:
+Shell/Go scripts wired to Claude Code lifecycle events:
 
-- **Session start/end** — load context, log sessions.
+- **Session start/end, PreCompact, Stop** — load context, log sessions, compact handoffs.
 - **Notifications** — audio cues when Claude needs input.
-- **Validators** — ruff runs after every Python write.
-- **Subagent sounds** — distinct cues per agent type.
-- **TTS** — ElevenLabs, OpenAI, Piper, pyttsx3, Qwen.
+- **Validators** (`hooks/validators/`) — ruff and ty run after every Python write; custom file-contents checks.
+- **Subagent sounds** (`hooks/sounds/agents/`) — distinct start/stop cues per agent type.
+- **PermissionRequest** — Go binary gating tool calls.
 
 ### Output Styles
 
-Swap response format on the fly: `genui`, `markdown-focused`, `table-based`, `ultra-concise`.
+- **[genui](./output-styles/genui.md)** — Generative UI with embedded modern styling.
+
+### Scripts
+
+- **[committer.sh](./scripts/committer.sh)** — Scripted commit helper.
+- **[visual-audit](./scripts/visual-audit/)** — Go CLI backing the `visual-audit` skill.
+
+### Status Line
+
+- **[statusline-command.sh](./statusline/statusline-command.sh)** — Custom status line, wired via `settings.json`.
 
 ## What's Gitignored
 
@@ -109,6 +116,7 @@ Swap response format on the fly: `genui`, `markdown-focused`, `table-based`, `ul
 | `memories/` | Session snapshots |
 | `projects/` | Living docs for active work |
 | `todos/` | Task tracking |
+| `docs/` | Scratch/plan docs, same treatment as `projects/` |
 | `.env` | API keys |
 | `logs/`, `status_lines/` | Runtime ephemera |
 

@@ -16,6 +16,8 @@ projects/*
 !projects/.gitkeep
 todos/*
 !todos/.gitkeep
+docs/*
+!docs/.gitkeep
 
 # Ephemeral state
 logs/
