@@ -1,15 +1,16 @@
 ---
 name: localmaxxing
 description: "LocalMaxxing API for local-LLM benchmark + eval leaderboards. Trigger: submitting benchmarks, pushing tok/s or eval scores."
+disable-model-invocation: true
 ---
 
 # LocalMaxxing API
 
 Public leaderboard for local LLM throughput + quality evals. Two surfaces:
 - **Benchmarks** — tok/s, TTFT, VRAM, hardware
-- **Evals** — task-level quality scores against named suites (e.g. `local-reasoning-mini`)
+- **Evals** — task-level quality scores against named suites (register your own — see Eval section)
 
-Both gate on admin approval after submission. Rate-limited to **1 submission per 5 min per user** (`retryAfterMs` in response).
+Benchmarks **auto-approve**; **eval runs land PENDING → admin approval**. Rate limit is **30 submissions per rolling hour per API key (300 for Pro)** — benchmarks and evals have **separate** windows. Read `X-RateLimit-Remaining`/`-Reset` headers to self-throttle. (verified 2026-06-25)
 
 ## Authentication
 
@@ -131,6 +132,10 @@ curl -s "https://www.localmaxxing.com/api/leaderboard?limit=200" | jq '[.rows[] 
 | `Gemma4` | `google/gemma-4-26B-A4B-it` | Q4_K_M |
 | `Gemma4-MXFP4` | `google/gemma-4-26B-A4B-it` | MXFP4_MOE |
 | `Llama3.2-3B` | `meta-llama/Llama-3.2-3B-Instruct` | BF16 |
+| `Ornith-1.0-9B` | `deepreinforce-ai/Ornith-1.0-9B` | BF16 |
+| `Ornith-1.0-35B` | `deepreinforce-ai/Ornith-1.0-35B` | Q8_0 |
+
+**Never** use the `-GGUF` distribution repos (`deepreinforce-ai/Ornith-1.0-9B-GGUF`) as `hfId` — base repo only. deepreinforce-ai also ships `Ornith-1.0-397B` / `-397B-FP8` upstream.
 
 **Key rule**: `hfId` is always the **upstream base model repo**, never a GGUF-distribution repo. The `-fast`, `-rocm`, `-spec` llama-swap suffixes are config variants of the same model — same hfId, same quant, different `engineFlags`/`commandSnippet`.
 
@@ -198,55 +203,82 @@ LOCALMAXXING_API_KEY=$(grep LOCALMAXXING_API_KEY ~/.env | cut -d= -f2) \
   --quant MXFP4_MOE --backend vulkan --max-tokens 256 --submit
 ```
 
-## Eval submission (path A — execute on their side)
+## Evals — current state (verified 2026-06-25)
 
-Easiest if your endpoint is publicly reachable (Cloudflare tunnel, Tailscale Funnel).
-They run the suite, you get scored automatically:
+**There are NO pre-seeded suites anymore.** `GET /api/evals/suites` returns `[]` and the old
+`local-reasoning-mini`/`hellaswag`/`mmlu` slugs all 404. You must **register your own CUSTOM
+suite** first (admin-approved), then run it. Both the suite and each run start PENDING.
+
+### Registering a custom suite — `POST /api/evals/suites`
+
+Schema reverse-engineered from the validator (docs page omits it). Minimal CUSTOM suite that
+validates and creates (returns `{id}`):
+
+```json
+{
+  "slug": "ornith-reasoning-mini",
+  "name": "Ornith Reasoning Mini",
+  "category": "reasoning",
+  "runner": "CUSTOM",                          // body: "CUSTOM" | "LM_EVAL_HARNESS"
+  "suiteDoc": {
+    "runner": "custom",                        // suiteDoc: "custom" | "lm-eval-harness"
+    "scoringMethod": "exact_match",            // exact_match|f1|pass_at_k|perplexity|llm_judge|user_rating|loglikelihood
+    "tasks": [{
+      "key": "t1",
+      "displayName": "Task 1",                 // REQUIRED (not `name`/`title` — only `displayName`)
+      "taskType": "qa",                        // optional enum: qa|multiple_choice|code|judge
+      "dataset": {
+        "source": "inline",                    // huggingface|url|inline|bucket
+        "items": [{"input": "2+2?", "gold": "4"}]   // ≥1; inline needs `items`
+      }
+    }]
+  }
+}
+```
+
+Required keys: body `slug,name,category,runner,suiteDoc`; suiteDoc `runner,scoringMethod,tasks[]`;
+task `key,displayName,dataset{source,items}`. `llm_judge` adds a required `suiteDoc.judge` object
+(3+ inner required strings) — prefer `exact_match`/`f1` for gold-answer QA. **No DELETE for
+suites** (405) — a bad suite sits PENDING (invisible publicly) until an admin clears it.
+
+### Path A — server-side execute (public endpoint)
+
+Only for **approved** CUSTOM suites; `baseUrl` must be public (localhost/Tailscale rejected):
 
 ```bash
 curl -s -X POST https://www.localmaxxing.com/api/evals/execute \
   -H "Authorization: Bearer $LOCALMAXXING_API_KEY" -H "Content-Type: application/json" \
-  -d '{
-    "suiteSlug": "local-reasoning-mini",
-    "modelHfId": "meta-llama/Llama-3.2-3B-Instruct",
-    "endpoint": {
-      "baseUrl": "https://llama.mk3y.com/v1",
-      "model": "Llama3.2-3B"
-    }
-  }' | jq
+  -d '{"suiteSlug":"ornith-reasoning-mini","modelHfId":"deepreinforce-ai/Ornith-1.0-9B",
+       "endpoint":{"baseUrl":"https://llama.mk3y.com/v1","model":"Ornith-1.0-9B"},
+       "autoSubmit":true}' | jq
 ```
 
-Note: nested `endpoint{baseUrl,model}` is the working shape (flat `baseUrl`+`model` was rejected).
+Nested `endpoint{baseUrl,model}` is the working shape. `autoSubmit:true` requires `hardware`.
+⚠️ `llama.mk3y.com` needs the Cloudflare tunnel **and** its DNS CNAME live (see setup note).
 
-## Eval submission (path B — run locally, post results)
+### Path B — run locally, post results — `POST /api/evals/runs`
 
-Working script: **`/home/mikekey/models/run_lm_eval.py`** — fetches the suiteDoc, runs each
-task locally with `temperature=0, top_p=1`, then dry-runs and (with `--submit`) posts.
-
-Result-record shape that validated in dry-run:
+Dry-run first (`/api/evals/runs/dry-run`, no rate hit). `results` is a map of every suite
+`taskKey → score | {score,nShots,nSamples}`; unknown/missing keys rejected. Optional `artifacts[]`
+for per-question traces, or `artifactBundle` for bucket-backed full traces.
 
 ```json
-{
-  "suiteSlug": "local-reasoning-mini",
-  "hfId": "meta-llama/Llama-3.2-3B-Instruct",
-  "hardware": { "hwClass": "DISCRETE_GPU", ... },
-  "engine": {"engine":"llama.cpp","backend":"vulkan","quantization":"BF16"},
-  "runConfig": { /* echoed from suiteDoc */ },
-  "results": {
-    "<task_key>": {
-      "score": 0.8,
-      "predictions": [
-        {"input": "...", "output": "Yes", "gold": "No", "correct": false}
-      ]
-    }
-  }
-}
+{ "suiteSlug":"ornith-reasoning-mini", "hfId":"deepreinforce-ai/Ornith-1.0-9B",
+  "hardware": { "hwClass":"DISCRETE_GPU", ... }, "quantization":"BF16",
+  "executionMode":"CUSTOM_LOCAL",
+  "results": { "t1": 0.8 } }
 ```
+
+**Gotchas (verified 2026-06-25):**
+- Each `artifacts[]` item **requires `prompt` or `objectRef`** (a prompt preview) — else 400 `"prompt or objectRef is required"`. Other fields (`taskKey,itemIndex,score,latencyMs,response,output`) are optional.
+- The run dry-run validates **schema first, approval second** — a schema-clean payload against a PENDING suite returns **403 `"not approved (status: PENDING)"`**. So a 403-not-approved means your payload is *correct* and only the suite gate remains. Both suite and run need admin approval.
+- **scaffold-bench bridge:** `~/models/eval_bridge.py --results <scaffold results.json> --suite <slug> --hf-id … --quant … [--submit]` maps each scenario's `points/maxPoints`→0-1, attaches artifacts, dry-runs then submits. Suite `scaffold-bench-coding` (CUSTOM, pass_at_k, 50 tasks) registered 2026-06-25, pending maintainer approval.
 
 ## Mike's setup (defaults)
 
 **archbox** (primary):
 - Public OpenAI-compat endpoint: `https://llama.mk3y.com/v1` (Cloudflare tunnel → llama-swap on archbox)
+  - Tunnel is **manual**, no systemd unit: `cloudflared tunnel run` (tunnelID `78144e69-…`). Also needs a DNS CNAME `llama.mk3y.com → <tunnelID>.cfargotunnel.com` (`cloudflared tunnel route dns 78144e69-8a73-43fe-850d-4a402f8f6b69 llama.mk3y.com`). Seen 2026-06-25 with tunnel up but **no DNS record** → endpoint returns connection-refused. Verify with `getent hosts llama.mk3y.com` before any Path-A eval.
 - Hardware: 3× R9700, 96 GB VRAM, 5950X, 64 GB RAM, Arch
 - Engine for GGUF runs: `llama.cpp` Vulkan (`backend=vulkan`)
 - Engine for MXFP4 vLLM runs: `vllm`, quant `MXFP4_MOE`
@@ -265,7 +297,7 @@ Result-record shape that validated in dry-run:
 - API key lives in `/home/mikekey/.env` as `LOCALMAXXING_API_KEY` — never inline it in commands the user sees
 - For `/api/evals/execute` the endpoint **must be publicly reachable from the LocalMaxxing servers** — Tailscale-only / localhost endpoints fail
 - HF model id (`hfId` / `modelHfId`) must be the **upstream base model repo** (e.g. `Qwen/Qwen3.5-122B-A10B`), not a quant-distribution repo (e.g. `noctrex/...-GGUF`). Put the quant string only in the `quantization` field. Use `/api/models/search?q=…` to resolve fuzzy names. Confusingly, `/dry-run` accepts GGUF repo ids; the real `/api/benchmarks` rejects them with 400 + a `suggestedHfId` hint.
-- **Run deletion is dashboard-only.** No `DELETE /api/benchmarks/{id}` exists yet — to remove a bad submission, tell the user to delete it from the LocalMaxxing dashboard manually.
+- **Runs are now editable/deletable via API** (verified 2026-06-25): `PATCH /api/runs/:id` (benchmark) / `PATCH /api/evals/runs/:id` (eval) — owners may edit within **24h**, 5-min cooldown between edits. `DELETE /api/runs/:id` / `DELETE /api/evals/runs/:id` — owner deletes own run, returns **204**. (Eval *suites* still have no DELETE — 405.)
 - For destructive operations (delete, unlist) confirm with user first
 - Pre-flight before benching: `systemctl is-active llama-swap || sudo systemctl start llama-swap` — the Cloudflare-tunneled endpoint returns 502 silently when the service is down
 

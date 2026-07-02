@@ -1,7 +1,28 @@
 #!/usr/bin/env node
 
 import { spawn, execSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import puppeteer from "puppeteer-core";
+
+const CHROME_CANDIDATES = [
+	"/usr/bin/google-chrome-stable",
+	"/usr/bin/google-chrome",
+	"/usr/bin/chromium",
+	"/usr/bin/chromium-browser",
+	"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+];
+const CHROME_BIN = CHROME_CANDIDATES.find(existsSync);
+if (!CHROME_BIN) {
+	console.error("✗ No Chrome/Chromium found. Checked:\n  " + CHROME_CANDIDATES.join("\n  "));
+	process.exit(1);
+}
+// Profile source matches the binary: chromium keeps its own config dir
+const PROFILE_SRC =
+	process.platform === "darwin"
+		? `${process.env.HOME}/Library/Application Support/Google/Chrome/`
+		: CHROME_BIN.includes("chromium")
+			? `${process.env.HOME}/.config/chromium/`
+			: `${process.env.HOME}/.config/google-chrome/`;
 
 const useProfile = process.argv[2] === "--profile";
 
@@ -45,14 +66,14 @@ if (useProfile) {
 			--exclude='*/Current Tabs' \
 			--exclude='*/Last Session' \
 			--exclude='*/Last Tabs' \
-			"${process.env.HOME}/Library/Application Support/Google/Chrome/" "${SCRAPING_DIR}/"`,
+			"${PROFILE_SRC}" "${SCRAPING_DIR}/"`,
 		{ stdio: "pipe" },
 	);
 }
 
 // Start Chrome with flags to force new instance
 spawn(
-	"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+	CHROME_BIN,
 	[
 		"--remote-debugging-port=9222",
 		`--user-data-dir=${SCRAPING_DIR}`,

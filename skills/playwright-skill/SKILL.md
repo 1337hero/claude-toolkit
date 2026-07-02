@@ -1,6 +1,6 @@
 ---
 name: playwright-skill
-description: "Browser automation with Playwright. Auto-detects dev servers, writes scripts to /tmp. Use for testing websites, forms, login flows, screenshots, responsive design, or any browser task."
+description: "Browser automation with Playwright. Auto-detects dev servers, writes scripts to /tmp. Testing websites, forms, login flows, screenshots, responsive design, any browser task."
 ---
 
 **IMPORTANT - Path Resolution:**

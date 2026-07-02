@@ -1,18 +1,18 @@
 ---
 name: browser-tools
-description: "Browser automation via Chrome DevTools. Interact with pages, test frontends, visible browser."
+description: "Drive VISIBLE Chrome with real profile/logins (CDP :9222). Screenshots, JS eval, interactive element picking, cookies. Frontend testing, authed flows, anything user should see. Headless text-only reading → Browser* tools. Linux + macOS."
 ---
 
 # Browser Tools
 
-Chrome DevTools Protocol tools for agent-assisted web automation. These tools connect to Chrome running on `:9222` with remote debugging enabled.
+Chrome DevTools Protocol tools for agent-assisted web automation. These tools connect to Chrome running on `:9222` with remote debugging enabled. Visible browser, optionally with the user's real profile — complements the headless Browser* extension tools, which are for logged-out text reading.
 
 ## Setup
 
 Run once before first use:
 
 ```bash
-cd {baseDir}/browser-tools
+cd {baseDir}
 npm install
 ```
 

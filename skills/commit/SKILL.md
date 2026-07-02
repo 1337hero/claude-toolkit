@@ -1,6 +1,6 @@
 ---
 name: commit
-description: "Read before making git commits."
+description: "Read before git commits."
 ---
 
 Create a git commit for the current changes using a concise Conventional Commits-style subject.

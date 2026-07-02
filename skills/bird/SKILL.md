@@ -1,6 +1,7 @@
 ---
 name: bird
-description: "Read and post to Twitter/X via the `bird` CLI — tweets, threads, search, timelines, bookmarks, follows, lists, media."
+description: "Read/post Twitter/X via `bird` CLI: tweets, threads, search, timelines, bookmarks, follows, lists, media."
+disable-model-invocation: true
 ---
 
 ## Auth: Extract Firefox Cookies

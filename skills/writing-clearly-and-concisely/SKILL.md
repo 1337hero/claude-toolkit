@@ -1,6 +1,6 @@
 ---
 name: writing-clearly-and-concisely
-description: Apply Strunk's timeless writing rules to ANY prose humans will read—documentation, commit messages, error messages, explanations, reports, or UI text. Makes your writing clearer, stronger, and more professional.
+description: "Apply Strunk's writing rules to ANY human-read prose — docs, commit messages, error messages, explanations, reports, UI text. Makes writing clearer, stronger, more professional."
 user-invocable: false
 ---
 
@@ -62,6 +62,22 @@ When context is tight:
 
 Alphabetical reference for usage questions
 
+## Don't Sound Like AI Wrote It
+
+Strunk predates the tells. These mark prose as machine-written — cut them:
+
+- **Em-dashes.** Don't use `—`. Use a comma, period, or parentheses. This is the loudest tell.
+- **Antithesis clichés:** "It's not just X, it's Y", "not only… but also", "isn't merely… it's". Say the thing once.
+- **Forced triads.** Three-item lists for rhythm ("clearer, stronger, and faster"). Use the number of items the point needs.
+- **Inflated vocabulary:** delve, leverage, robust, seamless, comprehensive, elevate, unlock, foster, boast, realm, landscape, tapestry, testament, crucial, vital. Plain words instead.
+- **Throat-clearing:** "It's worth noting", "It's important to understand", "That said", "At the end of the day".
+- **Hollow conclusions:** "In conclusion", "Overall", "Ultimately" followed by a restatement. End on the last real point.
+- **Hedge stacking:** "can help to", "may potentially", "might be able to". Commit or cut.
+- **Decorative bold and emoji.** Bold load-bearing terms only; emoji almost never.
+- **Over-structuring.** Not every answer is a bulleted list with headers. Prose is allowed.
+
+Read your draft and ask: would a sharp human write it this way, or does it smell generated? If the latter, plain it down.
+
 ## Bottom Line
 
-Writing for humans? Read `elements-of-style.md` and apply the rules. Low on tokens? Dispatch a subagent to copyedit with the guide.
+Writing for humans? Read `elements-of-style.md`, apply the rules, and strip the AI tells above. Low on tokens? Dispatch a subagent to copyedit with the guide.

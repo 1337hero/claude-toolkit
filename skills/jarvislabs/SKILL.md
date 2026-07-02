@@ -1,6 +1,7 @@
 ---
 name: jarvislabs
-description: Agent guide for running and monitoring GPU experiments with the jl CLI on JarvisLabs.ai.
+description: "Run and monitor GPU experiments with `jl` CLI on JarvisLabs.ai."
+disable-model-invocation: true
 ---
 
 # JarvisLabs GPU CLI (`jl`) — Agent Guide
